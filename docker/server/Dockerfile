@@ -3,6 +3,7 @@ MAINTAINER Ray Bogman <bogman@bogman.info>
 
 RUN apt-get update \
  && apt-get install -y --force-yes --no-install-recommends\
+      apt-utils \
       apt-transport-https \
       build-essential \
       curl \
