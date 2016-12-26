@@ -1,0 +1,33 @@
+{
+  "name": "run.mage.coach-receiver",
+  "version": "0.0.1",
+  "description": "Receive info from a sitespeed worker and store it in the db",
+  "main": "./lib/app.js",
+  "bin": "./lib/app.js",
+  "engines": {
+    "node": ">=0.10.7"
+  },
+  "scripts": {
+    "start": "node lib/app.js",
+    "lint": "eslint .",
+    "test": "mocha",
+    "travis": "npm run lint"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Ray Bogman",
+    "url": "https://www.jira.nl"
+  },
+  "contributors": {
+    "name": "Ronald Bethlehem"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3"
+  },
+  "dependencies": {
+    "moment": "^2.11.0",
+    "mysql": "^2.10.0",
+    "rsmq-worker": "^0.3.8",
+    "winston": "^2.1.1"
+  }
+}

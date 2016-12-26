@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '0.10'
+- '0.12'
+before_install:
+- pushd server
+- npm install
+- popd; pushd worker
+- npm install
+- popd; pushd receiver
+- npm install
+- popd
+script:
+- pushd server
+- npm run travis
+- popd; pushd worker
+- npm run travis
+- popd; pushd receiver
+- npm run travis
+- popd
+notifications:
+  slack:
+    secure: 

@@ -1,0 +1,37 @@
+{
+  "name": "run.mage.coach-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./app.js",
+  "bin": "./app.js",
+  "engines": {
+    "node": ">=0.10.7"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "eslint .",
+    "test": "mocha",
+    "travis": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "compression": "^1.6.0",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-beautify": "0.1.2",
+    "express-handlebars": "^2.0.1",
+    "md5": "^2.0.0",
+    "moment": "^2.11.0",
+    "mysql": "^2.10.0",
+    "node-cache": "^3.0.0",
+    "node-uuid": "^1.4.7",
+    "response-time": "2.3.1",
+    "rsmq": "^0.4.0",
+    "validator": "^4.5.0",
+    "winston": "^2.1.1",
+    "winston-slack": "^0.1.6"
+  }
+}
