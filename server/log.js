@@ -1,20 +1,19 @@
 var log = require('winston'),
-slack = require('winston-slack').Slack;
+slack = require('winston-slack-webhook').Slack;
 
-var domain = process.env.SLACK_DOMAIN,
-token = process.env.SLACK_TOKEN,
+var token = process.env.SLACK_TOKEN,
 level = process.env.SLACK_LEVEL,
 username = process.env.SLACK_USERNAME,
 channel = process.env.SLACK_CHANNEL;
+icon = process.env.SLACK_ICON;
 
-if (domain && token && level && channel && username) {
+if (token && level && channel && username && icon) {
 log.add(slack, {
-    domain: domain,
-    apiToken: token,
+    apiToken: 'https://hooks.slack.com/services/' + token,
     channel: '#' + channel,
     username: username,
     level: level,
-    handleExceptions : true
+    icon: icon
 });
 }
 else {

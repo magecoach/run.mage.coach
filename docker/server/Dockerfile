@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends\
+ && apt-get install -y --no-install-recommends \
       apt-utils \
       apt-transport-https \
       build-essential \
