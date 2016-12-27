@@ -32,6 +32,6 @@
     "rsmq": "^0.4.0",
     "validator": "^4.5.0",
     "winston": "^2.1.1",
-    "winston-slack-webhook": "^0.1.6"
+    "winston-slack-webhook": "^0.1.4"
   }
 }
