@@ -1,26 +1,28 @@
-FROM debian:jessie
+FROM ubuntu:latest
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
 RUN apt-get update \
- && apt-get install -y --force-yes --no-install-recommends\
+ && apt-get install -y --no-install-recommends \
       apt-utils \
       apt-transport-https \
       build-essential \
       curl \
-      vim \
       ca-certificates \
       git \
       lsb-release \
       python-all \
       rlwrap \
+      vim \
+      htop \
+      iotop \
+      net-tools \
  && rm -rf /var/lib/apt/lists/*;
 
-RUN curl https://deb.nodesource.com/node012/pool/main/n/nodejs/nodejs_0.12.0-1nodesource1~jessie1_amd64.deb > node.deb \
- && dpkg -i node.deb \
- && rm node.deb
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
 
-RUN npm install -g pangyp\
- && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\
+RUN npm install -g node-gyp\
+ && ln -s $(which node-gyp) $(dirname $(which node-gyp))/node-gyp\
  && npm cache clear\
  && node-gyp configure || echo ""
 
@@ -31,8 +33,9 @@ RUN git clone https://github.com/magecoach/run.mage.coach.git \
 ADD ./scripts/ /home/root/scripts
 
 ENV LOG_FILE /var/log/mage.coach/receiver.log
+
 ENTRYPOINT ["/home/root/scripts/start.sh"]
 
-RUN apt-get update \
- && apt-get upgrade -y --force-yes \
- && rm -rf /var/lib/apt/lists/*;
+ RUN apt-get update \
+  && apt-get upgrade -y \
+  && rm -rf /var/lib/apt/lists/*;
