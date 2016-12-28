@@ -36,7 +36,7 @@ var cache = new NodeCache({
 });
 
 module.exports = {
-  storeRun: function(url, id, ip, creationDate, browser, location, cb) {
+  storeRun: function(url, email, id, ip, creationDate, browser, location, cb) {
 
     pool.getConnection(function(err, connection) {
 

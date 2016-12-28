@@ -38,6 +38,6 @@
     "s3": "4.4.0",
     "tar.gz": "^1.0.2",
     "winston": "^2.1.1",
-    "winston-slack": "0.1.6"
+    "winston-slack-transport": "^2.0.0"
   }
 }

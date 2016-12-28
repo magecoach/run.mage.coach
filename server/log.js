@@ -1,5 +1,5 @@
 var log = require('winston'),
-slack = require('winston-slack-webhook').Slack;
+slack = require('winston-slack-transport').Slack;
 
 var token = process.env.SLACK_TOKEN,
 level = process.env.SLACK_LEVEL,
@@ -13,7 +13,8 @@ log.add(slack, {
     channel: '#' + channel,
     username: username,
     level: level,
-    icon: icon
+    icon: icon,
+    handleExceptions: true
 });
 }
 else {
