@@ -18,6 +18,8 @@ RUN apt-get update \
       net-tools \
  && rm -rf /var/lib/apt/lists/*;
 
+RUN export USER=root;
+
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 
