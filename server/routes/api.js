@@ -14,7 +14,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
 	res.json({
-		message: 'The sitespeed.io online API'
+		message: 'The mage.coach online API'
 	});
 });
 
