@@ -83,7 +83,6 @@ app.use('/texts', express.static(path.join(__dirname, 'public', 'texts'), {
 app.use('/result', result);
 app.use('/api', api);
 app.use('/sponsors', sponsors);
-app.use('/dashboard', dashboard);
 app.use('/about', about);
 app.use('/faq', faq);
 app.use('/', index);
