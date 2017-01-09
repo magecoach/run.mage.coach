@@ -12,9 +12,11 @@ var mysql = require('mysql'),
 var host = process.env.DATABASE_HOST;
 var password = process.env.DATABASE_PASSWORD;
 var user = process.env.DATABASE_USER;
+var db = process.env.DATABASE_DB;
 
-if (!host || !password || !user) {
-  console.log('Missing env info' + host + password + user);
+
+if (!host || !password || !user || !db) {
+  console.log('Missing env info' + host + password + user + db);
   console.log(JSON.stringify(process.env));
   process.exit(1);
 }
@@ -24,7 +26,7 @@ var pool = mysql.createPool({
   host: host,
   user: user,
   password: password,
-  database: 'sitespeedio'
+  database: db
 });
 
 var NodeCache = require('node-cache');
@@ -34,7 +36,7 @@ var cache = new NodeCache({
 });
 
 module.exports = {
-  storeRun: function(url, id, ip, creationDate, browser, location, cb) {
+  storeRun: function(url, email, id, ip, creationDate, browser, location, cb) {
 
     pool.getConnection(function(err, connection) {
 
@@ -46,6 +48,7 @@ module.exports = {
         var post = {
           id: null,
           url: url,
+          email: email,
           testId: id,
           location: location,
           browser: browser,
