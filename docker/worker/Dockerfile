@@ -1,46 +1,39 @@
-FROM ubuntu:latest
+FROM sitespeedio/sitespeed.io:latest
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-      apt-utils \
-      apt-transport-https \
-      build-essential \
-      curl \
-      ca-certificates \
-      git \
-      lsb-release \
-      python-all \
-      rlwrap \
-      vim \
-      htop \
-      iotop \
-      net-tools \
- && rm -rf /var/lib/apt/lists/*;
-
-RUN export USER=root;
-
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -y nodejs
-
-RUN npm install -g node-gyp\
- && ln -s $(which node-gyp) $(dirname $(which node-gyp))/node-gyp\
- && npm cache clear\
- && node-gyp configure || echo ""
-
-RUN git clone https://github.com/magecoach/run.mage.coach.git \
-  && cd run.mage.coach/worker \
-  && npm install -g
-
-RUN curl -sSL https://get.docker.com/ | sh
-
-ADD ./scripts/wrapdocker /usr/local/bin/wrapdocker
-RUN chmod +x /usr/local/bin/wrapdocker
-
+## Should rarely change, set early in build
 ADD ./scripts/start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
-
 ENV LOG_FILE /var/log/mage.coach/worker.log
+ENTRYPOINT start.sh
 
-VOLUME /var/lib/docker
-CMD wrapdocker
+## Install required packages
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
+RUN apt-get update -qqy
+RUN apt-get install -qqy \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    lxc \
+    iptables \
+    build-essential \
+    libkrb5-dev \
+    npm --no-install-recommends
+
+##
+# Install worker code
+RUN git clone github.com/magecoach/run.mage.coach.git && \
+    cd run.mage.coach/worker/ && \
+    npm install -g && \
+    npm cache clean
+
+# replaces git clone. for quick dev, use COPY of local files
+#COPY worker /worker
+#RUN cd /worker && \
+#    npm install -g
+#    npm cache clean
+
+#cleanup
+RUN apt-get purge -y npm git build-essential && \
+    apt-get clean autoclean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

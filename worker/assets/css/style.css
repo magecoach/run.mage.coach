@@ -414,7 +414,7 @@ input[type="submit"], button{
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoHeader.svg') 10px 0 / 70% auto no-repeat;
+	background: #0095d2 url('../img/logos/logoBig2.svg') 0 0 / 85% auto no-repeat;    
         width: 295px;
         height: 62px;
         margin-top: -36px;
@@ -427,7 +427,7 @@ input[type="submit"], button{
         background: transparent url('../img/tabshape.svg') 0 0 / cover no-repeat;
         content: "";
         width: 76px;
-        height: 28px;
+        height: 29px;
         margin-top: 34px;
         float: right;
         z-index: 1;

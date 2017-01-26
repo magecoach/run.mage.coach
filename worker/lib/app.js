@@ -11,7 +11,6 @@
 
 var RSMQWorker = require('rsmq-worker'),
   logSetup = require('./log'),
-  docker = require('./docker'),
   path = require('path'),
   generateHtml = require('./generateHtml'),
   fs = require('fs-extra'),
@@ -19,7 +18,8 @@ var RSMQWorker = require('rsmq-worker'),
   async = require('async'),
   targz = require('tar.gz'),
   util = require('./util'),
-  log = require('winston');
+  log = require('winston'),
+  child_process = require('child_process');
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
@@ -131,6 +131,8 @@ function startJob(message, cb) {
 
   var metrics = {};
 
+console.log(config); //debug
+
   log.debug('Starting job with url: ' + config.url + ' ' + message.id);
 
   async.series([
@@ -142,29 +144,22 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-        docker.run(config, resultWorker, callback);
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+
+//	  console.log(workerCommand);
+
+        resultWorker.send(JSON.stringify({
+          id: config.id,
+          status: 'Running',
+          hostname: config.hostname
+        }));
+
+
+	  child_process.exec(workerCommand, callback);
       },
       function(callback) {
-        var json;
-        try {
-          json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/summary.json'));
-        } catch (err) {
-          callback(err);
-        }
-        if (json) {
-          var metricNamesToFetch = ['ruleScore', 'speedIndex', 'domContentLoadedTime', 'domInteractiveTime',
-            'firstPaint', 'pageLoadTime', 'backEndTime', 'frontEndTime'
-          ];
-
-          json.forEach(function(aggregate) {
-            if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
-              metrics[aggregate.id] = aggregate.stats.median;
-            }
-          });
-          // rename index to index2, will create a new file
           fs.rename(path.join(dataDir, 'sitespeed-result', outputPath, 'index.html'), path.join(dataDir,
-            'sitespeed-result', outputPath, 'index2.html'), callback);
-        }
+              'sitespeed-result', outputPath, 'index2.html'), callback);
       },
       function(callback) {
         var data = {
@@ -174,7 +169,7 @@ function startJob(message, cb) {
           location: util.getLocation(fetchQueue),
           connection: config.connection,
           link: 'index2.html',
-          myUrl: 'http://results.sitespeed.io/' + outputPath + '/',
+          myUrl: 'https://report.mage.coach/' + outputPath + '/',
           stars: util.getStars(message.c, metrics.ruleScore, metrics.speedIndex),
           date: message.date,
           bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.speedIndex),

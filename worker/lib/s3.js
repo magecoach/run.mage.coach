@@ -31,14 +31,15 @@ var client = s3.createClient({
 });
 
 
+
 module.exports = {
   uploadDir: function(dir, endDir, cb) {
-
+//client.config.update({region: 'eu-west-1'});
     var params = {
       localDir: dir,
       deleteRemoved: false,
       s3Params: {
-        Bucket: 'results.sitespeed.io',
+        Bucket: 'report.mage.coach',
         Prefix: endDir
       }
     };
@@ -47,15 +48,18 @@ module.exports = {
 
     uploader.on('error', function(err) {
       log.error('Unable to s3 sync ', err.stack);
+      console.log('Unable to s3 sync ', err.stack);
       cb(err);
     });
 
     uploader.on('progress', function() {
-      // log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
+      log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
+      console.log('Uploading ', uploader.progressAmount, uploader.progressTotal);
     });
 
     uploader.on('end', function() {
       log.debug('finished uploading');
+      console.log('finished uploading');
       cb();
     });
   }

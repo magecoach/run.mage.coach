@@ -1,6 +1,6 @@
 {
   "name": "run.mage.coach-worker",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "",
   "main": "./lib/app.js",
   "bin": "./lib/app.js",
@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "author": {
     "name": "Ray Bogman",
-    "url": "https://www.jira.nl"
+    "url": "https://www.jira.nl/"
   },
   "contributors": {
     "name": "Ronald Bethlehem"
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "async": "^1.5.1",
-    "dockerode": "^2.2.8",
+    "child_process": "*",
     "fs-extra": "^0.26.4",
     "handlebars": "^4.0.5",
     "html-minifier": "^1.1.1",

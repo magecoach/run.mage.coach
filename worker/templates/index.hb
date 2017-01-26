@@ -4,14 +4,14 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="initial-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <title>Sitespeed.io results for {{url}}</title>
+    <title>Mage.coach results for {{url}}</title>
     <meta name="description" content="Web performance test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">
-    <meta name="keywords" content="sitespeed.io, wpo, webperf, perfmatters, performance">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/sitespeed.io-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/sitespeed.io-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/sitespeed.io-72.png">
-    <link rel="apple-touch-icon-precomposed" href="img/ico/sitespeed.io-57.png">
-    <link rel="shortcut icon" href="img/ico/sitespeed.io.ico">
+    <meta name="keywords" content="mage.coach, magento, wpo, webperf, perfmatters, performance">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/mage.coach-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/mage.coach-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/mage.coach-72.png">
+    <link rel="apple-touch-icon-precomposed" href="img/ico/mage.coach-57.png">
+    <link rel="shortcut icon" href="img/ico/mage.coach.ico">
   </head>
   <body id="{{bodyId}}" class="resultpage">
   <script>
@@ -20,14 +20,14 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-31246987-3', 'auto');
+    ga('create', 'UA-89167735-1', 'auto');
     ga('send', 'pageview');
     </script>
     <div id="container">
       <div id="top"></div>
 
       <header>
-        <a class="homelink" href="https://run.sitespeed.io">sitespeed.io</a>
+        <a class="homelink" href="https://run.mage.coach">mage.coach</a>
       </header>
       <div id="page">
         <div id="content">
@@ -63,20 +63,19 @@
       </div>
       <footer>
 
-        <a class="homelink" href="https://run.sitespeed.io">Sitespeed.io</a>
+        <a class="homelink" href="https://run.mage.coach">mage.coach</a>
 
         <ul id="footerlinks" class="footerlist">
-          <li><a href="https://run.sitespeed.io/">Home</a></li>
-          <li><a href="https://run.sitespeed.io/about/">About</a></li>
-          <li><a href="https://run.sitespeed.io/sponsors/">Sponsors</a></li>
-          <li><a href="https://run.sitespeed.io/dashboard/">Dashboard</a></li>
-          <li><a href="https://run.sitespeed.io/faq/">FAQ</a></li>
+          <li><a href="https://run.mage.coach/">Home</a></li>
+          <li><a href="https://run.mage.coach/about/">About</a></li>
+          <li><a href="https://run.mage.coach/sponsors/">Sponsors</a></li>
+          <li><a href="https://run.mage.coach/report/">Report</a></li>
+          <li><a href="https://run.mage.coach/faq/">FAQ</a></li>
         </ul>
 
         <ul id="footershare" class="socialcount footerlist">
-          <li class="facebook"><a href="https://www.facebook.com/sitespeed.io" title="Like on Facebook"></a></li>
-          <li class="twitter"><a href="https://twitter.com/sitespeedio" title="Follow on Twitter"></a></li>
-          <li class="github"><a href="https://github.com/sitespeedio/sitespeed.io" title="Star on Github"></a></li>
+          <li class="facebook"><a href="https://www.facebook.com/magecoach" title="Like on Facebook"></a></li>
+          <li class="twitter"><a href="https://twitter.com/magecoach" title="Follow on Twitter"></a></li>
         </ul>
 
       </footer>
