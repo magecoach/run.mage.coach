@@ -7,7 +7,7 @@
 'use strict';
 
 var express = require('express'),
-  uuid = require('node-uuid'),
+  uuid = require('uuid'),
   md5 = require('md5'),
   moment = require('moment'),
   queue = require('../queue'),

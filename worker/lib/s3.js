@@ -48,18 +48,15 @@ module.exports = {
 
     uploader.on('error', function(err) {
       log.error('Unable to s3 sync ', err.stack);
-      console.log('Unable to s3 sync ', err.stack);
       cb(err);
     });
 
     uploader.on('progress', function() {
-      log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
-      console.log('Uploading ', uploader.progressAmount, uploader.progressTotal);
+//      log.debug('Uploading ', uploader.progressAmount, uploader.progressTotal);
     });
 
     uploader.on('end', function() {
-      log.debug('finished uploading');
-      console.log('finished uploading');
+//      log.debug('finished uploading');
       cb();
     });
   }

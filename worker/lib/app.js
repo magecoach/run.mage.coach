@@ -131,7 +131,7 @@ function startJob(message, cb) {
 
   var metrics = {};
 
-console.log(config); //debug
+//  console.log(config);
 
   log.debug('Starting job with url: ' + config.url + ' ' + message.id);
 
