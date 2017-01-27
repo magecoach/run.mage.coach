@@ -14,6 +14,7 @@ RUN apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
+    git \
     lxc \
     iptables \
     build-essential \
@@ -21,7 +22,7 @@ RUN apt-get install -qqy \
     npm --no-install-recommends
 
 ## Install worker code
-RUN git clone github.com/magecoach/run.mage.coach.git && \
+RUN git clone https://github.com/magecoach/run.mage.coach.git && \
     cd run.mage.coach/worker/ && \
     npm install -g && \
     npm cache clean

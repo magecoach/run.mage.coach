@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:6
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
-RUN apk add --no-cache make gcc g++ python bash && rm -rf /var/cache/apk/*
+RUN apk add --no-cache make git gcc g++ python bash && rm -rf /var/cache/apk/*
 RUN npm install -g node-gyp\
  && ln -s $(which node-gyp) $(dirname $(which node-gyp))/node-gyp\
  && npm cache clear\
@@ -14,7 +14,7 @@ RUN npm install -g node-gyp\
 #    npm install -g
 
 ## Install server code
-RUN git clone github.com/magecoach/run.mage.coach.git && \
+RUN git clone https://github.com/magecoach/run.mage.coach.git && \
     cd run.mage.coach/server/ && \
     npm install -g && \
     npm cache clean
