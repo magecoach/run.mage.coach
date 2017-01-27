@@ -1,9 +1,3 @@
-/**
- * Sitespeed.io - How speedy is your site? (https://www.sitespeed.io)
- * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
- * and other contributors
- * Released under the Apache 2.0 License
- */
 'use strict';
 
 var express = require('express'),
@@ -19,8 +13,8 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('home', {
     bodyId: 'start',
-    title: 'Analyze your page against web performance best practice rules and using metrics',
-    description: 'How fast is your site? How good does it follow web performance best practice rules? Find out by using mage.coach.'
+    title: 'Analyze your Magento performance against the best practice rules.',
+    description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.'
   });
 });
 
@@ -50,6 +44,7 @@ router.post('/', function(req, res) {
     url: url.toLowerCase(),
     browser: req.body.browser || 'firefox',
     connection: req.body.connection || 'cable',
+    email: req.body.email || 'email',
     maxPagesToTest: 1,
     numberOfRuns: 3,
     date: creationDate
@@ -65,7 +60,7 @@ router.post('/', function(req, res) {
     if (err) {
       res.redirect('/');
     } else {
-      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, queueName, function() {
+      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, config.email, queueName, function() {
         res.cookie('ssioqueue', queueNumber);
         // res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
         res.redirect('/result/' + sessionId);
@@ -75,3 +70,4 @@ router.post('/', function(req, res) {
 });
 
 module.exports = router;
+

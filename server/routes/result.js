@@ -1,9 +1,3 @@
-/**
- * Sitespeed.io - How speedy is your site? (https://www.sitespeed.io)
- * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
- * and other contributors
- * Released under the Apache 2.0 License
- */
 'use strict';
 
 var express = require('express'),
@@ -31,7 +25,7 @@ router.get('/:sessionId', function(req, res) {
 			var date = moment(created);
 			var hash = (md5(date)).substring(0, 4);
 			var myPath = hash + '-' + date.year() + '/' + date.month() + '/' + date.date();
-			res.redirect('https://results.mage.coach/' + myPath + '/' + sessionId + '/index.html');
+			res.redirect('https://report.mage.coach/' + myPath + '/' + sessionId + '/index.html');
 
 		} else if (status === 'failed') {
 			res.render('failed', {
@@ -86,3 +80,4 @@ function getStatusText(status) {
 }
 
 module.exports = router;
+

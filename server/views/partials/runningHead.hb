@@ -1,17 +1,18 @@
 
   <meta charset='utf-8'>
   <meta name="viewport" content="initial-scale=1">
-  <title>{{title}}</title>
+  <title>Analyze your Magento performance against the best practice rules.</title>
   <noscript>
-    <meta http-equiv="refresh" content="30" />
+    <meta http-equiv="refresh" content="5" />
   </noscript>
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/mage.coach-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/mage.coach-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/mage.coach-72.png">
   <link rel="apple-touch-icon-precomposed" href="/img/ico/mage.coach-57.png">
   <link rel="shortcut icon" href="/img/ico/mage.coach.ico">
-  <meta name="description" content="{{description}}">
-  <meta name="keywords" content="magecoach, magento, webperf, perfmatters, performance">
+  <meta name="description" content="How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.">
+  <meta name="keywords" content="mage.coach, magento, webperf, perfmatters, performance">
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type = "text/javascript">
 
   var oldState = 'unknown';
@@ -92,7 +93,8 @@ var showCats = true;
     showCats = true;
   }
   else {
-    document.getElementById("result").src =
+    //document.getElementById("result").src =
+    document.getElementsByClassName("gif-bg").src =
     "//thecatapi.com/api/images/get?format=src&type=gif&date=" + date;
     showCats = false;
   }
@@ -104,3 +106,4 @@ var showCats = true;
   <style>
   {{> css}}
   </style>
+

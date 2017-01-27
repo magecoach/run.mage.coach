@@ -20,14 +20,13 @@ RUN apt-get install -qqy \
     libkrb5-dev \
     npm --no-install-recommends
 
-##
-# Install worker code
+## Install worker code
 RUN git clone github.com/magecoach/run.mage.coach.git && \
     cd run.mage.coach/worker/ && \
     npm install -g && \
     npm cache clean
 
-# replaces git clone. for quick dev, use COPY of local files
+## replaces git clone. for quick dev, use COPY of local files
 #COPY worker /worker
 #RUN cd /worker && \
 #    npm install -g

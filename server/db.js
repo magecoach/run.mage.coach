@@ -1,9 +1,3 @@
-/**
- * Sitespeed.io - How speedy is your site? (https://www.sitespeed.io)
- * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
- * and other contributors
- * Released under the Apache 2.0 License
- */
 'use strict';
 
 var mysql = require('mysql'),
@@ -13,7 +7,6 @@ var host = process.env.DATABASE_HOST;
 var password = process.env.DATABASE_PASSWORD;
 var user = process.env.DATABASE_USER;
 var db = process.env.DATABASE_DB;
-
 
 if (!host || !password || !user || !db) {
   console.log('Missing env info' + host + password + user + db);
@@ -36,7 +29,7 @@ var cache = new NodeCache({
 });
 
 module.exports = {
-  storeRun: function(url, email, id, ip, creationDate, browser, location, cb) {
+  storeRun: function(url, id, ip, creationDate, browser, email, location, cb) {
 
     pool.getConnection(function(err, connection) {
 
@@ -48,10 +41,10 @@ module.exports = {
         var post = {
           id: null,
           url: url,
-          email: email,
           testId: id,
           location: location,
           browser: browser,
+          email: email,
           created: creationDate.format('gggg-MM-DD HH:mm:ss'),
           testerIp: ip,
           status: 'waiting'

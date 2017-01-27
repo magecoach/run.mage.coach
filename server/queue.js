@@ -1,9 +1,3 @@
-/**
- * Sitespeed.io - How speedy is your site? (https://www.sitespeed.io)
- * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
- * and other contributors
- * Released under the Apache 2.0 License
- */
 'use strict';
 var RedisSMQ = require('rsmq'),
 	log = require('winston');
@@ -56,6 +50,7 @@ module.exports = {
 				u: config.url,
 				p: path,
 				b: config.browser,
+				e: config.email,
 				c: config.connection,
 				m: config.maxPagesToTest,
 				n: config.numberOfRuns,

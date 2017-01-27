@@ -1,43 +1,24 @@
-FROM ubuntu:latest
+FROM mhart/alpine-node:6
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-      apt-utils \
-      apt-transport-https \
-      build-essential \
-      curl \
-      ca-certificates \
-      git \
-      lsb-release \
-      python-all \
-      rlwrap \
-      vim \
-      htop \
-      iotop \
-      net-tools \
- && rm -rf /var/lib/apt/lists/*;
-
-RUN export USER=root;
-
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -y nodejs
-
+RUN apk add --no-cache make gcc g++ python bash && rm -rf /var/cache/apk/*
 RUN npm install -g node-gyp\
  && ln -s $(which node-gyp) $(dirname $(which node-gyp))/node-gyp\
  && npm cache clear\
  && node-gyp configure || echo ""
 
-RUN git clone https://github.com/magecoach/run.mage.coach.git \
- && cd run.mage.coach/receiver \
- && npm install -g
+## replaces git clone. for quick dev, use COPY of local files
+#COPY ./scripts/ /home/root/scripts
+#COPY ./receiver /receiver
+#RUN cd /receiver && \
+#    npm install -g
 
-ADD ./scripts/ /home/root/scripts
+## Install receiver code
+RUN git clone github.com/magecoach/run.mage.coach.git && \
+    cd run.mage.coach/receiver/ && \
+    npm install -g && \
+    npm cache clean
 
 ENV LOG_FILE /var/log/mage.coach/receiver.log
 
 ENTRYPOINT ["/home/root/scripts/start.sh"]
-
- RUN apt-get update \
-  && apt-get upgrade -y \
-  && rm -rf /var/lib/apt/lists/*;

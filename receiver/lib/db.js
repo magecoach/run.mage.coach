@@ -1,27 +1,20 @@
-/**
- * Sitespeed.io - How speedy is your site? (https://www.sitespeed.io)
- * Copyright (c) 2015, Peter Hedenskog, Tobias Lidskog
- * and other contributors
- * Released under the Apache 2.0 License
- */
 'use strict';
 
 var mysql = require('mysql'),
 moment = require('moment'),
 log = require('winston');
 
-var host = process.env.DATABASE_HOST || '';
-var password = process.env.DATABASE_PASSWORD || '';
-var user = process.env.DATABASE_USER || '';
-var db = process.env.DATABASE_DB || '';
-
+var host = process.env.DATABASE_HOST;
+var password = process.env.DATABASE_PASSWORD;
+var user = process.env.DATABASE_USER;
+var db = process.env.DATABASE_DB;
 
 var pool = mysql.createPool({
 	connectionLimit: 2,
 	host: host,
 	user: user,
 	password: password,
-  database: db
+  	database: db
 });
 
 module.exports = {

@@ -9,11 +9,11 @@ icon = process.env.SLACK_ICON;
 
 if (token && level && channel && username && icon) {
 log.add(slack, {
-    apiToken: "https://hooks.slack.com/services/ + token",
+    webhook_url: "token",
     channel: "channel",
     username: "username",
     level: "level",
-    icon: "icon",
+    icon_emoji: "icon",
     handleExceptions: true
 });
 }

@@ -114,8 +114,8 @@ footer .homelink {
 #footershare .twitter a{
     background:transparent url('../img/socialmedia/twitter-round.svg') center center /contain no-repeat;
 }
-#footershare .github a{
-    background:transparent url('../img/socialmedia/github-round.svg') center center /contain no-repeat;
+#footershare .coach a{
+    background:transparent url('../img/socialmedia/coach-round.svg') center center /contain no-repeat;
 }
 
 
@@ -152,7 +152,7 @@ body#start {
 }
 
 #start #container {
-    background: #0095d2 url('../img/bg_cat.png') 75% 36px no-repeat;
+    background: #0095d2 url('../img/bg_penguin.png') 75% 36px no-repeat;
 }
 
 /* Analyze form */
@@ -213,7 +213,7 @@ input[type="submit"], button{
 
 /* Processing */
 
-#randomcats{
+#randomimg{
     overflow:hidden;
     margin:0 auto;
     position:relative;
@@ -224,15 +224,18 @@ padding-top: 10px;
 padding-bottom: 10px;
 }
 
-#randomcats img{
+#randomimg .gif-bg{
+    background:url('') no-repeat center center;
     width:100%;
-    height:auto;
+    height:100%;
+    min-height:100%;
     position: absolute;
     top: -9999px;
     bottom: -9999px;
     left: -9999px;
     right: -9999px;
     margin: auto;
+    background-size:cover;
 }
 
 /* Results */
@@ -369,20 +372,20 @@ padding-bottom: 10px;
 
     }
 
-    #dashboard #page:before {
-        background: transparent url('../img/cat/dashboard.svg') 0 0 / contain no-repeat;
+    #report #page:before {
+        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
     }
 
     #flash #page:before {
-        background: transparent url('../img/cat/flash.svg') 0 0 / contain no-repeat;
+        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
     }
 
     #extra #page:before {
-        background: transparent url('../img/cat/cat_with_gears.svg') 0 0 / contain no-repeat;
+        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
     }
 
     #faq #page:before {
-        background: transparent url('../img/cat/magician.svg') 0 0 / contain no-repeat;
+        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
     }
 
     #process #page:before {
@@ -417,7 +420,7 @@ padding-bottom: 10px;
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoHeader.svg') 10px 0 / 70% auto no-repeat;
+        background: #0095d2 url('../img/logos/logoBig2.svg') 0 0 / 85% auto no-repeat;
         width: 295px;
         height: 62px;
         margin-top: -36px;
@@ -426,11 +429,11 @@ padding-bottom: 10px;
         z-index: 2;
     }
 
-    header .homelink:after {
+ header .homelink:after {
         background: transparent url('../img/tabshape.svg') 0 0 / cover no-repeat;
         content: "";
         width: 76px;
-        height: 28px;
+        height: 29px;
         margin-top: 34px;
         float: right;
         z-index: 1;
@@ -469,7 +472,7 @@ padding-bottom: 10px;
 
     /* Processing */
 
-    #randomcats {
+    #randomimg {
         width: 71vw;
         height: 32vw;
         max-width: 100%;
@@ -575,7 +578,7 @@ padding-bottom: 10px;
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoHeaderMobile.svg') center bottom / contain no-repeat;
+        background: #0095d2 url('../img/logos/logoBig2.svg') center / 70% auto no-repeat;
         height: 70px;
         border: 10px solid #0095d2;
     }
@@ -588,8 +591,8 @@ padding-bottom: 10px;
         background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
     }
 
-    #dashboard h1#box-title:after {
-        background: transparent url('../img/cat/dashboard.svg') center 0 / contain no-repeat;
+    #report h1#box-title:after {
+        background: transparent url('../img/penguin/report.svg') center 0 / contain no-repeat;
     }
 
     #flash h1#box-title:after {
@@ -624,7 +627,7 @@ padding-bottom: 10px;
     /* Analyze */
 
     #analyze-form {
-        margin-bottom:3em;
+        margin: 1em 0 3em 0;
     }
 
     #analyze-form input[type="submit"] {
@@ -634,7 +637,7 @@ padding-bottom: 10px;
 
     /* Processing */
 
-    #randomcats {
+    #randomimg {
         width: 87vw;
         height: 39vw;
         margin-bottom:2vw;
@@ -690,7 +693,7 @@ padding-bottom: 10px;
     footer .homelink {
         bottom: 0;
         left: 0;
-        margin: 0 auto 7px;
+        margin: 0 auto 4px;
         position: absolute;
         right: 0;
         width: 24%;
@@ -730,3 +733,4 @@ padding-bottom: 10px;
     }
 
 }
+

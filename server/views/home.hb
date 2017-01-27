@@ -8,12 +8,6 @@
             <option value="chrome" selected>Chrome [48]</option>
             <option value="firefox">Firefox [44]</option>
           </select></label>
-          <label><span>Location:</span> <select name="location">
-            <option value="nyc">New York [USA]</option>
-            <option value="sf">San Francisco [USA]</option>
-            <option value="amsterdam">Amsterdam [Netherlands]</option>
-            <option value="singapore">Singapore [Singapore]</option>
-          </select></label>
           <label><span>Connection type:</span> <select name="connection">
             <option value="mobile3g">mobile3g</option>
             <option value="mobile3gfast">mobile3g fast</option>
@@ -21,10 +15,11 @@
             <option value="native">native</option>
           </select></label>
           <label><span>Email:</span>
-            <input id="email" name="email" type="email" placeholder="Submit your email address" title="Submit your email address">
+	    <input id="email" name="email" type="email" class="validate[required,custom[email]] data-input" placeholder="Please enter your email address." required>
           </label>
           <input type="submit" value="Start analyzing">
         </form>
 
       </div>
     </div>
+
