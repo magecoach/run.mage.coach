@@ -6,8 +6,8 @@
 <div id="page">
   <div id="content" class="info">
     <h1 id="box-title">Magento Web Performance Report</h1>
+    <p>Mage coach reports will be generated based on the submitted URL, Browser and Connection type. All reports are stored online and will be send to your personal mail box.</p>
+    <p>If you would like to backup the report for future reference, click the download button on the report page. All report will be otherwise removed 7 days after creation date.</p>
     <p></p>
-
-    <p></p>  
 </div>
 </div>
