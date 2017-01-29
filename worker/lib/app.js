@@ -178,7 +178,7 @@ function startJob(message, cb) {
         generateHtml.generate(path.join(dataDir, 'sitespeed-result', outputPath), data, callback);
       },
       function(callback) {
-        var files = ['data/browsertime','data/yslow','data/summary.json','data/urls.txt', 'config.json', 'sitespeed.io.log', 'browsermobproxy.log', 'browsertime.log'];
+        var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json', 'logs/sitespeed.io.log'];
 
         async.each(files, function(file, thecb) {
           fs.remove(path.join(dataDir, 'sitespeed-result', outputPath, file), thecb);
