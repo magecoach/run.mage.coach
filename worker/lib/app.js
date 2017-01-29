@@ -137,7 +137,7 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub --plugins.load analysisStorer ' + config.url;
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub --plugins.load analysisstorer ' + config.url;
 
 //	  console.log(workerCommand);
 
