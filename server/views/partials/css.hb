@@ -115,7 +115,7 @@ footer .homelink {
     background:transparent url('https://static.mage.coach/img/socialmedia/twitter-round.svg') center center /contain no-repeat;
 }
 #footershare .coach a{
-    background:transparent url('https://static.mage.coach//img/socialmedia/coach-round.svg') center center /contain no-repeat;
+    background:transparent url('https://static.mage.coach/img/socialmedia/coach-round.svg') center center /contain no-repeat;
 }
 
 
