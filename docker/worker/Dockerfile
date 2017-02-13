@@ -28,7 +28,7 @@ RUN git clone https://github.com/magecoach/run.mage.coach.git && \
     npm install -g && \
     npm cache clean
 
-RUN set -i 's/const defaultPlugins = new Set(['browsertime', 'coach', 'datacollector', 'domains', 'assets', 'html', 'screenshot','metrics', 'text', 'harstorer', 'budget']);/const defaultPlugins = new Set(['analysisstorer', 'browsertime', 'coach', 'datacollector', 'domains', 'assets', 'html', 'screenshot','metrics', 'text', 'harstorer', 'budget']);/g' /usr/src/app/lib/support/pluginLoader.js
+RUN sed -i 's/const defaultPlugins = new Set(['browsertime', 'coach', 'datacollector', 'domains', 'assets', 'html', 'screenshot','metrics', 'text', 'harstorer', 'budget']);/const defaultPlugins = new Set(['analysisstorer', 'browsertime', 'coach', 'datacollector', 'domains', 'assets', 'html', 'screenshot','metrics', 'text', 'harstorer', 'budget']);/g' /usr/src/app/lib/support/pluginLoader.js
 
 ## replaces git clone. for quick dev, use COPY of local files
 #COPY worker /worker

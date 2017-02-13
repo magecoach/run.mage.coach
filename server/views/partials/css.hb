@@ -82,7 +82,7 @@ footer {
 }
 
 footer .homelink {
-    background: transparent url('../img/logos/logoFooter.svg') 0 center / contain no-repeat;
+    background: transparent url('https://static.mage.coach/img/logos/logoFooter.svg') 0 center / contain no-repeat;
 }
 
 .footerlist li a {
@@ -109,13 +109,13 @@ footer .homelink {
 }
 
 #footershare .facebook a{
-    background:transparent url('../img/socialmedia/facebook-round.svg') center center /contain no-repeat;
+    background:transparent url('https://static.mage.coach/img/socialmedia/facebook-round.svg') center center /contain no-repeat;
 }
 #footershare .twitter a{
-    background:transparent url('../img/socialmedia/twitter-round.svg') center center /contain no-repeat;
+    background:transparent url('https://static.mage.coach/img/socialmedia/twitter-round.svg') center center /contain no-repeat;
 }
 #footershare .coach a{
-    background:transparent url('../img/socialmedia/coach-round.svg') center center /contain no-repeat;
+    background:transparent url('https://static.mage.coach//img/socialmedia/coach-round.svg') center center /contain no-repeat;
 }
 
 
@@ -148,11 +148,11 @@ body#start {
 }
 
 #start #content {
-    background: transparent url('../img/logos/logoBig2.svg') 0 0 / 100% no-repeat;
+    background: transparent url('https://static.mage.coach/img/logos/logoBig.svg') 0 0 / 100% no-repeat;
 }
 
 #start #container {
-    background: #0095d2 url('../img/bg_penguin.png') 75% 36px no-repeat;
+    background: #0095d2 url('https://static.mage.coach/img/bg_penguin.png') 75% 36px no-repeat;
 }
 
 /* Analyze form */
@@ -190,7 +190,7 @@ body#start {
 }
 
 #analyze-form select{
-    background:#fff url('../img/arrow_down.svg') right center /14px auto no-repeat;
+    background:#fff url('https://static.mage.coach/img/arrow_down.svg') right center /14px auto no-repeat;
 }
 
 input[type="submit"], button{
@@ -285,7 +285,7 @@ padding-bottom: 10px;
     height:100px;
     display:block;
     content:"";
-    background:transparent url('../img/cat/cat_share_this.svg') left center /contain no-repeat;
+    background:transparent url('https://static.mage.coach/img/coach/penguin_share_this.svg') left center /contain no-repeat;
 }
 
 #share li{
@@ -305,19 +305,19 @@ padding-bottom: 10px;
 }
 
 #share .facebook a{
-    background:#3b5998 url('../img/socialmedia/facebook.svg') center center /contain no-repeat;
+    background:#3b5998 url('https://static.mage.coach/img/socialmedia/facebook.svg') center center /contain no-repeat;
 }
 #share .twitter a{
-    background:#00aced url('../img/socialmedia/twitter.svg') center center /contain no-repeat;
+    background:#00aced url('https://static.mage.coach/img/socialmedia/twitter.svg') center center /contain no-repeat;
 }
 #share .googleplus a{
-    background:#dd4b39 url('../img/socialmedia/googleplus.svg') center center /contain no-repeat;
+    background:#dd4b39 url('https://static.mage.coach/img/socialmedia/googleplus.svg') center center /contain no-repeat;
 }
 #share .linkedin a{
-    background:#007bb6 url('../img/socialmedia/linkedin.svg') center center /contain no-repeat;
+    background:#007bb6 url('https://static.mage.coach/img/socialmedia/linkedin.svg') center center /contain no-repeat;
 }
 #share .pinterest a{
-    background:#cb2027 url('../img/socialmedia/pinterest.svg') center center /contain no-repeat;
+    background:#cb2027 url('https://static.mage.coach/img/socialmedia/pinterest.svg') center center /contain no-repeat;
 }
 
 
@@ -373,35 +373,35 @@ padding-bottom: 10px;
     }
 
     #report #page:before {
-        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/report.svg') 0 0 / contain no-repeat;
     }
 
     #flash #page:before {
-        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/flash.svg') 0 0 / contain no-repeat;
     }
 
     #extra #page:before {
-        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') 0 0 / contain no-repeat;
     }
 
     #faq #page:before {
-        background: transparent url('../img/coach/pengiun_coach.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/magician.svg') 0 0 / contain no-repeat;
     }
 
     #process #page:before {
-        background: transparent url('../img/cat/cat_inspecting.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_inspecting.svg') 0 0 / contain no-repeat;
     }
 
     #bad-result #page:before {
-        background: transparent url('../img/cat/cat_bad_result.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_bad_result.svg') 0 0 / contain no-repeat;
     }
 
     #good-result #page:before {
-        background: transparent url('../img/cat/cat_good_result.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_good_result.svg') 0 0 / contain no-repeat;
     }
 
     #hero #page:before {
-        background: transparent url('../img/cat/captainSitespeed.io.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/captainCoach.svg') 0 0 / contain no-repeat;
     }
 
     #top {
@@ -420,7 +420,7 @@ padding-bottom: 10px;
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoBig2.svg') 0 0 / 85% auto no-repeat;
+        background: #0095d2 url('https://static.mage.coach/img/logos/logoBig.svg') 0 0 / 85% auto no-repeat;
         width: 295px;
         height: 62px;
         margin-top: -36px;
@@ -430,7 +430,7 @@ padding-bottom: 10px;
     }
 
  header .homelink:after {
-        background: transparent url('../img/tabshape.svg') 0 0 / cover no-repeat;
+        background: transparent url('https://static.mage.coach/img/tabshape.svg') 0 0 / cover no-repeat;
         content: "";
         width: 76px;
         height: 29px;
@@ -578,7 +578,7 @@ padding-bottom: 10px;
     }
 
     header .homelink {
-        background: #0095d2 url('../img/logos/logoBig2.svg') center / 70% auto no-repeat;
+        background: #0095d2 url('https://static.mage.coach/img/logos/logoBig.svg') center / 70% auto no-repeat;
         height: 70px;
         border: 10px solid #0095d2;
     }
@@ -588,40 +588,40 @@ padding-bottom: 10px;
     }
 
     #extra h1#box-title:after {
-        background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') center 0 / contain no-repeat;
     }
 
     #report h1#box-title:after {
-        background: transparent url('../img/penguin/report.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/report.svg') center 0 / contain no-repeat;
     }
 
     #flash h1#box-title:after {
-        background: transparent url('../img/cat/flash.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/flash.svg') center 0 / contain no-repeat;
     }
 
     #faq h1#box-title:after {
-        background: transparent url('../img/cat/magician.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/magician.svg') center 0 / contain no-repeat;
     }
 
 
     #extra h1#box-title:after {
-        background: transparent url('../img/cat/cat_with_gears.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') center 0 / contain no-repeat;
     }
 
     #bad-result h1#box-title:after {
-        background: transparent url('../img/cat/cat_bad_result.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_bad_result.svg') center 0 / contain no-repeat;
     }
 
     #good-result h1#box-title:after {
-        background: transparent url('../img/cat/cat_good_result.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_good_result.svg') center 0 / contain no-repeat;
     }
 
     #great-result h1#box-title:after {
-        background: transparent url('../img/cat/cat_great_result.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_great_result.svg') center 0 / contain no-repeat;
     }
 
     #hero h1#box-title:after {
-        background: transparent url('../img/cat/captainSitespeed.io.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/captainCoach.svg') center 0 / contain no-repeat;
     }
 
     /* Analyze */
