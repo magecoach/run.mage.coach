@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="initial-scale=1">
+    <base href="https://static.mage.coach/">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Mage.coach results for {{url}}</title>
     <meta name="description" content="Web performance test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">

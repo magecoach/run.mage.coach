@@ -192,7 +192,8 @@ function startJob(message, cb) {
         });
       },
       function(callback) {
-        fs.copy(path.join(__dirname, '../assets/'), path.join(dataDir, 'sitespeed-result', outputPath), function(
+	// remove path.join(__dirname, '../assets/'),
+        fs.copy(path.join(dataDir, 'sitespeed-result', outputPath), function(
           err) {
           if (err) {
             log.error('Error copying files ', err);
