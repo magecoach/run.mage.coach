@@ -4,5 +4,6 @@
 **/*.log
 **/db
 **/docker/local/
+**/docker/worker/worker/
 setup.sh
 *.swp
