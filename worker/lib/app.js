@@ -16,7 +16,7 @@ var RSMQWorker = require('rsmq-worker'),
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
-var logFile = process.env.LOG_FILE ||  'worker.log';
+var logFile = process.env.LOG_FILE ||  'worker.log';
 
 var args = process.argv.slice(2);
 var analyzeInProgress = false;
@@ -137,7 +137,7 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n 1 ' +  ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
 
 	  console.log(workerCommand);
 
@@ -150,34 +150,55 @@ function startJob(message, cb) {
 
 	  child_process.exec(workerCommand, callback);
       },
-	function(callback) {
+      function(callback) {
         var json;
         try {
-	  console.log(path.join(dataDir, 'sitespeed-result', outputPath, '/data/browsertime.summary.json'));
-          json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/browsertime.summary.json'));
+          json = JSON.parse(fs.readFileSync(path.join(dataDir, 'sitespeed-result', outputPath, '/data/browsertime.summary.json')).toString());
+        } catch (err) {
+          callback(err);
+        }
+console.log(json);
+console.log(json.keys());
+        if (json) {
+console.log('yay');
+          var metricNamesToFetch = ['rumSpeedIndex'];
+console.log(metricNamesToFetch);
+console.log(json.constructor.name);
+	for(var i = 0, len = json.length; i < len; i++) {
+console.log(i);
+	var aggregate = json[i];
+console.log(aggregate)
+            if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
+              metrics[aggregate.id] = aggregate.stats.median;
+            }
+          }
+console.log(metrics);
+        }
+
+	try {
+          json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/coach.summary.json'));
         } catch (err) {
           callback(err);
         }
         if (json) {
-          var metricNamesToFetch = ['rumSpeedIndex', 'domContentLoadedEventStart', 'domInteractive', 'firstPaint', 'pageLoadTime', 'backEndTime', 'frontEndTime'];
-
+           metricNamesToFetch = ['score'];
+console.log('search score')
           json.forEach(function(aggregate) {
             if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
               metrics[aggregate.id] = aggregate.stats.median;
             }
           });
-          // rename index to index2, will create a new file
-          fs.rename(path.join(dataDir, 'sitespeed-result', outputPath, 'index.html'), path.join(dataDir,
-            'sitespeed-result', outputPath, 'index2.html'), callback);
+console.log(metrics);
+	  if(metrics['score']){
+              metrics['ruleScore'] = metrics['score'];
+          }
         }
-      },
-      function(callback) {
-	  console.log("rename")
+
+
           fs.rename(path.join(dataDir, 'sitespeed-result', outputPath, 'index.html'), path.join(dataDir,
               'sitespeed-result', outputPath, 'index2.html'), callback);
-      },
+        },
       function(callback) {
-	console.log("generate")
         var data = {
           id: message.id,
           url: config.url,
@@ -186,29 +207,23 @@ function startJob(message, cb) {
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'https://report.mage.coach/' + outputPath + '/',
-          stars: util.getStars(message.c, metrics.rumSpeedIndex),
+          stars: util.getStars(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
           date: message.date,
-          bodyId: util.getBodyId(message.c, metrics.rumSpeedIndex),
-          boxTitle: util.getBoxTitle(message.c, metrics.rumSpeedIndex),
-          boxDesciption: util.getBoxDescription(message.c, metrics.rumSpeedIndex)
+          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
+          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
+          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.rumSpeedIndex)
         };
-
-console.log(data);
 
         // push the metrics
         Object.keys(metrics).forEach(function(key) {
           data[key] = metrics[key];
         });
 
-console.log(metrics);
-console.log(data);
-
         generateHtml.generate(path.join(dataDir, 'sitespeed-result', outputPath), data, callback);
       },
       function(callback) {
-console.log("remove")
-        var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json'];
-
+        var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json', 'logs/sitespeed.io.log'];
+/* Disable file cleanup for development TODO:remove comment
         async.each(files, function(file, thecb) {
           fs.remove(path.join(dataDir, 'sitespeed-result', outputPath, file), thecb);
 
@@ -219,9 +234,9 @@ console.log("remove")
           callback(err);
 
         });
+*/
       },
       function(callback) {
-console.log("compress")
         var compress = new targz().compress(path.join(dataDir, 'sitespeed-result', outputPath), path.join(dataDir,
           'sitespeed-result', outputPath, message.id + '.tar.gz'), function(err) {
 
@@ -235,20 +250,17 @@ console.log("compress")
         });
       },
       function(callback) {
-console.log("upload")
         resultWorker.send(JSON.stringify({
           status: 'uploading',
           id: message.id
         }), callback);
       },
       function(callback) {
-console.log("s3")
         s3.uploadDir(path.join(dataDir, 'sitespeed-result', outputPath), outputPath, callback);
       }
     ],
     // optional callback
     function(err, results) {
-console.log("callback")
       if (err) {
         log.error('Sending failed message on queue for ' + message.u, err);
         resultWorker.send(JSON.stringify({

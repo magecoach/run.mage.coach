@@ -23,16 +23,16 @@ RUN apt-get install -qqy \
     npm --no-install-recommends
 
 ## Install worker code
-RUN git clone https://github.com/magecoach/run.mage.coach.git && \
-    cd run.mage.coach/worker/ && \
-    npm install -g && \
-    npm cache clean
-
-## replaces git clone. for quick dev, use COPY of local files
-#COPY worker /worker
-#RUN cd /worker && \
+#RUN git clone https://github.com/magecoach/run.mage.coach.git && \
+#    cd run.mage.coach/worker/ && \
 #    npm install -g && \
 #    npm cache clean
+
+## replaces git clone. for quick dev, use COPY of local files
+COPY worker /worker
+RUN cd /worker && \
+    npm install -g && \
+    npm cache clean
 
 #cleanup
 RUN apt-get purge -y npm git build-essential && \

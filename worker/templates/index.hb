@@ -3,16 +3,15 @@
   <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="initial-scale=1">
-    <base href="https://static.mage.coach/">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://static.mage.coach/css/style.css" rel="stylesheet" type="text/css">
     <title>Mage.coach results for {{url}}</title>
     <meta name="description" content="Web performance test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.">
     <meta name="keywords" content="mage.coach, magento, wpo, webperf, perfmatters, performance">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/mage.coach-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/mage.coach-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/mage.coach-72.png">
-    <link rel="apple-touch-icon-precomposed" href="img/ico/mage.coach-57.png">
-    <link rel="shortcut icon" href="img/ico/mage.coach.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://static.mage.coach/img/ico/mage.coach-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://static.mage.coach/img/ico/mage.coach-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static.mage.coach/img/ico/mage.coach-72.png">
+    <link rel="apple-touch-icon-precomposed" href="https://static.mage.coach/img/ico/mage.coach-57.png">
+    <link rel="shortcut icon" href="https://static.mage.coach/img/ico/mage.coach.ico">
   </head>
   <body id="{{bodyId}}" class="resultpage">
   <script>
@@ -45,7 +44,7 @@
           </p>
 
           <p class="result-user-agent">
-            <em>RUMSpeedIndex:</em> <strong>{{speedIndex}}</strong>
+            <em>RUMSpeedIndex:</em> <strong>{{rumSpeedIndex}}</strong>
             <em>Score:</em> <strong>{{ruleScore}}</strong>
           </p>
 
