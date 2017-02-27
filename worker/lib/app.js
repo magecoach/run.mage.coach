@@ -16,7 +16,7 @@ var RSMQWorker = require('rsmq-worker'),
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
-var logFile = process.env.LOG_FILE ||  'worker.log';
+var logFile = process.env.LOG_FILE ||  'worker.log';
 
 var args = process.argv.slice(2);
 var analyzeInProgress = false;
@@ -137,9 +137,9 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n 1 ' +  ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
 
-	  console.log(workerCommand);
+//	  console.log(workerCommand);
 
         resultWorker.send(JSON.stringify({
           id: config.id,
@@ -151,53 +151,9 @@ function startJob(message, cb) {
 	  child_process.exec(workerCommand, callback);
       },
       function(callback) {
-        var json;
-        try {
-          json = JSON.parse(fs.readFileSync(path.join(dataDir, 'sitespeed-result', outputPath, '/data/browsertime.summary.json')).toString());
-        } catch (err) {
-          callback(err);
-        }
-console.log(json);
-console.log(json.keys());
-        if (json) {
-console.log('yay');
-          var metricNamesToFetch = ['rumSpeedIndex'];
-console.log(metricNamesToFetch);
-console.log(json.constructor.name);
-	for(var i = 0, len = json.length; i < len; i++) {
-console.log(i);
-	var aggregate = json[i];
-console.log(aggregate)
-            if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
-              metrics[aggregate.id] = aggregate.stats.median;
-            }
-          }
-console.log(metrics);
-        }
-
-	try {
-          json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/coach.summary.json'));
-        } catch (err) {
-          callback(err);
-        }
-        if (json) {
-           metricNamesToFetch = ['score'];
-console.log('search score')
-          json.forEach(function(aggregate) {
-            if (metricNamesToFetch.indexOf(aggregate.id) > -1) {
-              metrics[aggregate.id] = aggregate.stats.median;
-            }
-          });
-console.log(metrics);
-	  if(metrics['score']){
-              metrics['ruleScore'] = metrics['score'];
-          }
-        }
-
-
           fs.rename(path.join(dataDir, 'sitespeed-result', outputPath, 'index.html'), path.join(dataDir,
               'sitespeed-result', outputPath, 'index2.html'), callback);
-        },
+      },
       function(callback) {
         var data = {
           id: message.id,
@@ -207,11 +163,11 @@ console.log(metrics);
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'https://report.mage.coach/' + outputPath + '/',
-          stars: util.getStars(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
+          stars: util.getStars(message.c, metrics.ruleScore, metrics.speedIndex),
           date: message.date,
-          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
-          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
-          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.rumSpeedIndex)
+          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.speedIndex),
+          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.speedIndex),
+          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.speedIndex)
         };
 
         // push the metrics
@@ -223,7 +179,7 @@ console.log(metrics);
       },
       function(callback) {
         var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json', 'logs/sitespeed.io.log'];
-/* Disable file cleanup for development TODO:remove comment
+
         async.each(files, function(file, thecb) {
           fs.remove(path.join(dataDir, 'sitespeed-result', outputPath, file), thecb);
 
@@ -234,7 +190,6 @@ console.log(metrics);
           callback(err);
 
         });
-*/
       },
       function(callback) {
         var compress = new targz().compress(path.join(dataDir, 'sitespeed-result', outputPath), path.join(dataDir,
