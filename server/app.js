@@ -87,7 +87,7 @@ app.use(function(req, res) {
   res.render('404', {
     title: '404: File Not Found',
     layout: 'main',
-    bodyId: 'extra'
+    bodyId: 'about'
   });
 });
 

@@ -373,19 +373,19 @@ padding-bottom: 10px;
     }
 
     #report #page:before {
-        background: transparent url('https://static.mage.coach/img/coach/report.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_report.svg') 0 0 / contain no-repeat;
     }
 
-    #flash #page:before {
-        background: transparent url('https://static.mage.coach/img/coach/flash.svg') 0 0 / contain no-repeat;
+    #sponsors #page:before {
+        background: transparent url('https://static.mage.coach/img/coach/penguin_sponsors.svg') 0 0 / contain no-repeat;
     }
 
-    #extra #page:before {
-        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') 0 0 / contain no-repeat;
+    #about #page:before {
+        background: transparent url('https://static.mage.coach/img/coach/penguin_about.svg') 0 0 / contain no-repeat;
     }
 
     #faq #page:before {
-        background: transparent url('https://static.mage.coach/img/coach/magician.svg') 0 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_faq.svg') 0 0 / contain no-repeat;
     }
 
     #process #page:before {
@@ -587,25 +587,20 @@ padding-bottom: 10px;
         font-size: 26px;
     }
 
-    #extra h1#box-title:after {
-        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') center 0 / contain no-repeat;
+    #about h1#box-title:after {
+        background: transparent url('https://static.mage.coach/img/coach/penguin_about.svg') center 0 / contain no-repeat;
     }
 
     #report h1#box-title:after {
-        background: transparent url('https://static.mage.coach/img/coach/report.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_report.svg') center 0 / contain no-repeat;
     }
 
-    #flash h1#box-title:after {
-        background: transparent url('https://static.mage.coach/img/coach/flash.svg') center 0 / contain no-repeat;
+    #sponsors h1#box-title:after {
+        background: transparent url('https://static.mage.coach/img/coach/penguin_sponsors.svg') center 0 / contain no-repeat;
     }
 
     #faq h1#box-title:after {
-        background: transparent url('https://static.mage.coach/img/coach/magician.svg') center 0 / contain no-repeat;
-    }
-
-
-    #extra h1#box-title:after {
-        background: transparent url('https://static.mage.coach/img/coach/penguin_with_gears.svg') center 0 / contain no-repeat;
+        background: transparent url('https://static.mage.coach/img/coach/penguin_faq.svg') center 0 / contain no-repeat;
     }
 
     #bad-result h1#box-title:after {

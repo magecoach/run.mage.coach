@@ -16,7 +16,7 @@ router.get('/:sessionId', function(req, res) {
 		if (err) {
 			res.render('unknown', {
 				layout: 'main',
-				bodyId: 'extra',
+				bodyId: 'about',
 				url: url
 			});
 			return;
@@ -32,7 +32,7 @@ router.get('/:sessionId', function(req, res) {
 				status: status,
 				layout: 'main',
 				'id': sessionId,
-				bodyId: 'extra',
+				bodyId: 'about',
 				url: url
 			});
 		}
