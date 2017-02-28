@@ -112,6 +112,7 @@ function startJob(message, cb) {
   var config = {
     url: message.u,
     browser: message.b,
+    display: message.d,
     connection: message.c,
     maxPagesToTest: message.m || 1,
     no: message.n || 1,
@@ -137,7 +138,7 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' --browser ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' --connection ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' -b ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
 
 //	  console.log(workerCommand);
 
@@ -159,6 +160,7 @@ function startJob(message, cb) {
           id: message.id,
           url: config.url,
           browser: util.capitalize(config.browser),
+          display: util.capitalize(config.display),
           location: util.getLocation(fetchQueue),
           connection: config.connection,
           link: 'index2.html',

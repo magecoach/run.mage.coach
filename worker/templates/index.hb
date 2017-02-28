@@ -38,7 +38,7 @@
                    value="{{url}}"/>
 
           <p class="result-test-info">
-            Test performed {{date}} with {{browser}} using a {{connection}} connection from {{location}}.
+            Test performed {{date}} with {{browser}} using a {{connection}} from {{display}}.
           </p>
           <p class="result-test-info">{{boxDesciption}}
           </p>

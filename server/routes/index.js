@@ -43,6 +43,7 @@ router.post('/', function(req, res) {
   var config = {
     url: url.toLowerCase(),
     browser: req.body.browser || 'firefox',
+    display: req.body.display || 'desktop',
     connection: req.body.connection || 'cable',
     email: req.body.email || 'email',
     maxPagesToTest: 1,
@@ -60,7 +61,7 @@ router.post('/', function(req, res) {
     if (err) {
       res.redirect('/');
     } else {
-      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, config.email, queueName, function() {
+      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, config.display, config.email, queueName, function() {
         res.cookie('ssioqueue', queueNumber);
         // res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
         res.redirect('/result/' + sessionId);
