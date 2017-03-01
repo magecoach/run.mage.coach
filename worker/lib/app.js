@@ -152,6 +152,15 @@ function startJob(message, cb) {
 	  child_process.exec(workerCommand, callback);
       },
       function(callback) {
+          try {
+              var json;
+              json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/coach.summary.json'));
+              metrics.ruleScore = json['score'].median;
+              metrics.speedIndex = json['performance']['score'].median;
+          } catch (err) {
+              callback(err);
+          }
+
           fs.rename(path.join(dataDir, 'sitespeed-result', outputPath, 'index.html'), path.join(dataDir,
               'sitespeed-result', outputPath, 'index2.html'), callback);
       },
