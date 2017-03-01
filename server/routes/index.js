@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
     connection: req.body.connection || 'cable',
     email: req.body.email || 'email',
     maxPagesToTest: 1,
-    numberOfRuns: 3,
+    numberOfRuns: process.env.RUNS || '3',
     date: creationDate
   };
 
