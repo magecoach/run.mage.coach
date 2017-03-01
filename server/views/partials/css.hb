@@ -579,7 +579,7 @@ padding-bottom: 10px;
 
     header .homelink {
         background: #0095d2 url('https://static.mage.coach/img/logos/logoBig.svg') center / 70% auto no-repeat;
-        height: 70px;
+        height: 80px;
         border: 10px solid #0095d2;
     }
 
