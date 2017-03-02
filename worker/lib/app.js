@@ -174,11 +174,11 @@ function startJob(message, cb) {
           connection: config.connection,
           link: 'index2.html',
           myUrl: 'https://report.mage.coach/' + outputPath + '/',
-          stars: util.getStars(message.c, metrics.ruleScore, metrics.speedIndex),
+          stars: util.getStars(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
           date: message.date,
-          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.speedIndex),
-          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.speedIndex),
-          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.speedIndex)
+          bodyId: util.getBodyId(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
+          boxTitle: util.getBoxTitle(message.c, metrics.ruleScore, metrics.rumSpeedIndex),
+          boxDesciption: util.getBoxDescription(message.c, metrics.ruleScore, metrics.rumSpeedIndex)
         };
 
         // push the metrics
