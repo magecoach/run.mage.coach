@@ -400,6 +400,10 @@ padding-bottom: 10px;
         background: transparent url('https://static.mage.coach/img/coach/penguin_good_result.svg') 0 0 / contain no-repeat;
     }
 
+    #great-result #page:before {
+        background: transparent url('https://static.mage.coach/img/coach/penguin_great_result.svg') 0 0 / contain no-repeat;
+    }
+
     #hero #page:before {
         background: transparent url('https://static.mage.coach/img/coach/captainCoach.svg') 0 0 / contain no-repeat;
     }
@@ -410,6 +414,21 @@ padding-bottom: 10px;
         background-color: #fff;
         margin-right: 50%;
         width: 50%;
+    }
+
+   #about p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    #report p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    #sponsors p {
+      font-size: 20px;
+      line-height: 1.5;
     }
 
     header {
