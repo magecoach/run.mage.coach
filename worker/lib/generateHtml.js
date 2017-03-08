@@ -10,23 +10,10 @@ hb = require('handlebars');
 var compiledTemplates = compileTemplates(path.join(__dirname, '../templates/'));
 
 module.exports = {
-generate: function (dir, data, cb) {
-
-	var file = path.join(dir, 'index.html');
-
-	var result = compiledTemplates.index(data);
-
+generate: function (data, template) {
+	var result = compiledTemplates[template](data);
 	var result2 = minify(result, { removeComments: true, collapseWhitespace: true });
-
-  fs.outputFile(file, result2, function(err) {
-    if (err) {
-      log.log('error', 'Couldn\'t write the file ' + file + ' err:' + err);
-    } else {
-      log.log('info', 'Wrote file ' + file);
-    }
-    cb(err);
-  });
-
+    return result2;
   }
 };
 

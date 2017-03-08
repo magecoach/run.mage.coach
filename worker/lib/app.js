@@ -191,7 +191,16 @@ function startJob(message, cb) {
           data[key] = metrics[key];
         });
 
-        generateHtml.generate(path.join(dataDir, 'sitespeed-result', outputPath), data, callback);
+        var generated = generateHtml.generate(data, 'index');
+        var resultFile = path.join(path.join(dataDir, 'sitespeed-result', outputPath), 'index.html');
+        fs.outputFile(resultFile, generated, function(err) {
+            if (err) {
+                log.log('error', 'Couldn\'t write the file ' + resultFile + ' err:' + err);
+            } else {
+                log.log('info', 'Wrote file ' + resultFile);
+            }
+            callback(err);
+        });
       },
       function(callback) {
         var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json', 'logs/sitespeed.io.log'];
