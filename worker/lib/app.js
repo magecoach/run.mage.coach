@@ -112,7 +112,7 @@ function startJob(message, cb) {
   var config = {
     url: message.u,
     browser: message.b,
-    display: message.d,
+    display: message.device,
     connection: message.c,
     maxPagesToTest: message.m || 1,
     no: message.n || 1,
@@ -138,7 +138,12 @@ function startJob(message, cb) {
         }), callback);
       },
       function(callback) {
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' -b ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection +  ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+          var display = '';
+          if (config.display == 'mobile') {
+              display = ' --mobile';
+          }
+
+          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' -b ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection + display + ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
 
 //	  console.log(workerCommand);
 

@@ -44,7 +44,7 @@ module.exports = {
           testId: id,
           location: location,
           browser: browser,
-	  display: display,
+          display: display,
           email: email,
           created: creationDate.format('gggg-MM-DD HH:mm:ss'),
           testerIp: ip,

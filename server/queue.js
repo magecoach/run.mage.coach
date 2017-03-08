@@ -50,7 +50,7 @@ module.exports = {
 				u: config.url,
 				p: path,
 				b: config.browser,
-				d: config.display,
+				device: config.display,
 				e: config.email,
 				c: config.connection,
 				m: config.maxPagesToTest,
