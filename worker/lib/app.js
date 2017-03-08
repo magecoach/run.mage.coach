@@ -12,7 +12,8 @@ var RSMQWorker = require('rsmq-worker'),
   targz = require('tar.gz'),
   util = require('./util'),
   log = require('winston'),
-  child_process = require('child_process');
+  child_process = require('child_process'),
+  nodemailer = require('nodemailer');
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
@@ -41,9 +42,18 @@ var redisHost = process.env.REDIS_HOST;
 var resultQueue = process.env.REDIS_RESULT_QUEUE;
 var redisPassword = process.env.REDIS_PASSWORD;
 
+var mailUser = process.env.MAIL_USER;
+var mailPassword = process.env.MAIL_PASSWORD;
+var canMail = true;
+
 if (!redisHost || !resultQueue || !redisPassword) {
   log.info('Missing env info, make sure REDIS is configured ' + JSON.stringify(process.env));
   process.exit(1);
+}
+
+if (!mailUser || !mailPassword) {
+  log.info("Please set up mailing correctly. Mail disabled");
+  canMail = false;
 }
 
 var options = {
@@ -201,7 +211,34 @@ function startJob(message, cb) {
             }
             callback(err);
         });
+
+        if(canMail) {
+            //send mail
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: mailUser,
+                    pass: mailPassword
+                }
+            });
+
+            let mailOptions = {
+                from: '"Mage Coach" <hello@mage.coach>',
+                to: message.e,
+                subject: 'Test results for '+message.u,
+                text: generateHtml.generate(data, 'mail_plain'),
+                html: generateHtml.generate(data, 'mail_html')
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error);
+                }
+                console.log('Message %s sent: %s', info.messageId, info.response);
+            });
+        }
       },
+
       function(callback) {
         var files = ['data/aggregateassets.summary.json', 'data/browsertime.summary.json','data/coach.summary.json','data/domains.summary.json','data/largestassets.summary.json', 'data/pagexray.summary.json', 'data/slowestassets.summary.json', 'logs/sitespeed.io.log'];
 
