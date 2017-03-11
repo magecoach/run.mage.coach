@@ -1,4 +1,9 @@
-    <div id="page">
+    <div id="page ">
+      <div id="my-clouds">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            <i class="fa fa-cloud" style="background:transparent!important;color:white;font-size:60px"></i>
+        </marquee>
+      </div>    
       <div id="content">
         <!--<h2>Analyze your website speed and performance:</h2>-->
 

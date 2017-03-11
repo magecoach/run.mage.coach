@@ -1,5 +1,9 @@
 <footer>
 
+  <div id="ship">
+      <marquee behavior="scroll" direction="left" scrollamount="3"><img src="https://static.mage.coach/img/ship.svg" width="48" height="34" alt="Mage coach - Penguin on the boot" /></marquee>
+  </div>
+
   <a class="homelink" href="/">mage.coach</a>
 
   <ul id="footerlinks" class="footerlist">

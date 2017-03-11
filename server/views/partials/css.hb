@@ -1,3 +1,5 @@
+/* b9d6ef - lightblue */
+/* 266b97 - darkblue  */
 /* General */
 
 * {
@@ -62,7 +64,7 @@ form a {
 /* Footer */
 
 footer {
-    background-color: #e1f6fd;
+    background-color: #b9d6ef;
 }
 
 #footer-wrapper {
@@ -118,7 +120,6 @@ footer .homelink {
     background:transparent url('https://static.mage.coach/img/socialmedia/coach-round.svg') center center /contain no-repeat;
 }
 
-
 .photo {
   border-radius: 10px;
   margin-right: 20px;
@@ -131,7 +132,7 @@ footer .homelink {
 /*Startpage specials*/
 
 body#start {
-    border-top-width: 18px;
+    border-top-width: 0px;
 }
 
 #start header {
@@ -151,16 +152,21 @@ body#start {
     background: transparent url('https://static.mage.coach/img/logos/logoBig.svg') 0 0 / 100% no-repeat;
 }
 
-#start #container {
-    background: #0095d2 url('https://static.mage.coach/img/bg_penguin.png') 75% 36px no-repeat;
+#container {
+    background: #266b97 url('https://static.mage.coach/img/iceberg.svg') no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Analyze form */
 
 #analyze-form {
-    color: #fff;
+    color: #000000;
     width: 100%;
     overflow:hidden;
+    padding-bottom: 5px;
 }
 
 #analyze-form label {
@@ -320,15 +326,17 @@ padding-bottom: 10px;
     background:#cb2027 url('https://static.mage.coach/img/socialmedia/pinterest.svg') center center /contain no-repeat;
 }
 
+#ship{
+    margin: -35px;
+}
 
 /* Desktop only */
 
 @media only screen and (min-width: 769px) {
 
     body {
-        border-top: 48px solid #0095d2;
-        background-color: #e1f6fd;
-
+      border-top: 48px solid #266b97;
+      background-color: #b9d6ef;
     }
 
     #page, header, footer {
@@ -338,6 +346,7 @@ padding-bottom: 10px;
     }
 
     #page {
+        margin-top: 50px;
         padding-left: 10px;
         min-height: 300px;
         overflow:hidden;
@@ -358,7 +367,7 @@ padding-bottom: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
-        background-color: #e1f6fd;
+        background-color: #b9d6ef;
         padding: 20px;
         font-size: 20px;
         line-height: 1.5;
@@ -368,7 +377,7 @@ padding-bottom: 10px;
         width: 50%;
         min-width: 550px;
         margin: 0 auto;
-        padding-top: 150px;
+        padding-top: 160px;
 
     }
 
@@ -410,10 +419,9 @@ padding-bottom: 10px;
 
     #top {
         width: 100%;
-        border-top: 26px solid #0095d2;
+        border-top: 10px solid #266b97;
         background-color: #fff;
         margin-right: 50%;
-        width: 50%;
     }
 
    #about p {
@@ -432,30 +440,31 @@ padding-bottom: 10px;
     }
 
     header {
-        background-color: #fff;
-        border-top: 36px solid #0095d2;
-        margin-top: -62px;
+        background-color: #266b97;
+        border-top: 36px solid #266b97;
+        margin-top: -100px;
         height: 80px;
+        max-width: 100%;
     }
 
     header .homelink {
-        background: #0095d2 url('https://static.mage.coach/img/logos/logoBig.svg') 0 0 / 85% auto no-repeat;
+        background: transparent url('https://static.mage.coach/img/logos/logoBig.svg') 0 0 / 85% auto no-repeat;
         width: 295px;
         height: 62px;
-        margin-top: -36px;
+        margin-top: 7px;
         margin-right: 10px;
         position: relative;
         z-index: 2;
     }
 
  header .homelink:after {
-        background: transparent url('https://static.mage.coach/img/tabshape.svg') 0 0 / cover no-repeat;
-        content: "";
-        width: 76px;
-        height: 29px;
-        margin-top: 34px;
-        float: right;
-        z-index: 1;
+        #background: transparent url('https://static.mage.coach/img/tabshape.svg') 0 0 / cover no-repeat;
+        #content: "";
+        #width: 76px;
+        #height: 29px;
+        #margin-top: 34px;
+        #float: right;
+        #z-index: 1;
     }
 
     #analyze-form label {
@@ -468,7 +477,7 @@ padding-bottom: 10px;
     #analyze-form span {
         float: left;
         padding-top: 0.5em;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     #analyze-form input[type="submit"] {
@@ -538,7 +547,6 @@ padding-bottom: 10px;
         width:40px;
         height:40px;
     }
-
 }
 
 /*Devices with max width 768px */
@@ -547,7 +555,7 @@ padding-bottom: 10px;
 
     body {
         font-size: 16px;
-        background-color: #0095d2;
+        background-color: #b9d6ef;
     }
 
     #page, header, .footerlist {
@@ -569,18 +577,18 @@ padding-bottom: 10px;
     }
 
     #container{
-        background-color:#0095d2;
+        background-color:#266b97;
         padding-bottom:20px;
     }
 
     #start #container {
-        background-size: contain;
+        #background-size: contain;
     }
 
     #start #content {
         width: 100%;
         padding-top: 20vw;
-        border:1vw solid #0095d2;
+        border:1vw solid transparent;
     }
 
     body:not(#start) #page {
@@ -597,9 +605,9 @@ padding-bottom: 10px;
     }
 
     header .homelink {
-        background: #0095d2 url('https://static.mage.coach/img/logos/logoBig.svg') center / 70% auto no-repeat;
+        background: #266b97 url('https://static.mage.coach/img/logos/logoBig.svg') center / 70% auto no-repeat;
         height: 80px;
-        border: 10px solid #0095d2;
+        border: 10px solid #266b97;
     }
 
     h1 {
