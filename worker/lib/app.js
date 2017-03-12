@@ -168,10 +168,12 @@ function startJob(message, cb) {
       },
       function(callback) {
           try {
-              var json;
-              json = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/coach.summary.json'));
-              metrics.ruleScore = json['score'].median;
-              metrics.speedIndex = json['performance']['score'].median;
+              var json_a;
+                json_a = require(path.join(dataDir, 'sitespeed-result', outputPath, '/data/coach.summary.json'));
+                metrics.ruleScore = json_a['score'].median;
+              var json_b
+                json_b = require(path.join(dataDir, 'sitespeed-result', outputPath, 'data/browsertime.summary.json'));
+                metrics.rumSpeedIndex = json_b['rumSpeedIndex'].median;
           } catch (err) {
               callback(err);
           }
