@@ -3,7 +3,6 @@
 'use strict';
 
 var RSMQWorker = require('rsmq-worker'),
-  logSetup = require('./log'),
   path = require('path'),
   generateHtml = require('./generateHtml'),
   fs = require('fs-extra'),
@@ -13,7 +12,8 @@ var RSMQWorker = require('rsmq-worker'),
   util = require('./util'),
   log = require('winston'),
   child_process = require('child_process'),
-  nodemailer = require('nodemailer');
+  nodemailer = require('nodemailer'),
+  slack = require('./slack');
 
 
 var logLevel = process.env.LOG_LEVEL || 'info';
@@ -138,6 +138,7 @@ function startJob(message, cb) {
 //  console.log(config);
 
   log.debug('Starting job with url: ' + config.url + ' ' + message.id);
+  slack.info('Testing ' + config.url);
 
   async.series([
       function(callback) {
