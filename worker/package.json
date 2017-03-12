@@ -40,6 +40,7 @@
     "hiredis": "0.5.0",
     "winston": "^2.1.1",
     "winston-slack-transport": "^2.0.0",
-    "nodemailer": "3.1.4"
+    "nodemailer": "3.1.4",
+    "slack-node": "0.1.8"
   }
 }
