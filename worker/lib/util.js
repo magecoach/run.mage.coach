@@ -1,43 +1,43 @@
 'use strict';
 module.exports = {
-  getStars: function(connection, score, speedIndex) {
-    var n = calculateAggregatedScore(score, speedIndex);
+  getStars: function(connection, score, rumSpeedIndex) {
+    var n = calculateAggregatedScore(score, rumSpeedIndex);
     return new Array(n + 1).join('&#9733;'); // 1-6 stars
   },
-  getBodyId: function(connection, score, speedIndex) {
+  getBodyId: function(connection, score, rumSpeedIndex) {
     var ids = {
       6: 'hero',
       5: 'great-result',
       4: 'good-result'
     };
-    var n = calculateAggregatedScore(score, speedIndex);
+    var n = calculateAggregatedScore(score, rumSpeedIndex);
 
     return ids[n] || 'bad-result';
   },
-  getBoxTitle: function(connection, score, speedIndex) {
+  getBoxTitle: function(connection, score, rumSpeedIndex) {
     var titles = {
       6: 'Wow HERO performance!',
       5: 'Great performance!',
       4: 'Good performance!',
       3: 'Solid performance!'
     };
-    var n = calculateAggregatedScore(score, speedIndex);
+    var n = calculateAggregatedScore(score, rumSpeedIndex);
 
     return titles[n] || 'You can do better!';
   },
-  getBoxDescription: function(connection, score, speedIndex) {
-    if (score > 95 && speedIndex < 700) {
+  getBoxDescription: function(connection, score, rumSpeedIndex) {
+    if (score > 95 && rumSpeedIndex < 700) {
       return 'Wow!!! There must be multiple super performance heroes that works on this site. The score and the speed are really great!';
     }
-    else if (score > 90 && speedIndex < 1000) {
+    else if (score > 90 && rumSpeedIndex < 1000) {
       return 'Yeah this is really really good. Maybe there are some small tweaks you can do to improve the performance even more.';
-    } else if (speedIndex < 2000) {
+    } else if (rumSpeedIndex < 2000) {
         return 'Yeah this the speed is really good and it seems like you can do some work to follow performance best practice rules, that will make your site even faster.';
     }
-    else if (speedIndex > 10000) {
+    else if (rumSpeedIndex > 10000) {
       return 'Well how should I say this? This seems like the worst performance we have ever seen. But don\'t worry, there\'s a lot you can do to fix it';
     }
-    else if (speedIndex > 5000) {
+    else if (rumSpeedIndex > 5000) {
       return 'It seems there are a lot of room for improvements on this site. ';
     } else if (score > 80) {
       return 'The score is ok and there are some things we can do to improve it, lets checkout the full report.';
@@ -65,17 +65,17 @@ module.exports = {
   }
 };
 
-function calculateAggregatedScore(ruleScore, speedIndex) {
-  if (ruleScore > 95 && speedIndex < 700) {
+function calculateAggregatedScore(ruleScore, rumSpeedIndex) {
+  if (ruleScore > 95 && rumSpeedIndex < 700) {
     return 6;
   }
-  else if (ruleScore > 90 && speedIndex < 1000) {
+  else if (ruleScore > 90 && rumSpeedIndex < 1000) {
     return 5;
   }
-  else if (speedIndex < 2000) {
+  else if (rumSpeedIndex < 2000) {
     return 3;
   }
-  else if (speedIndex > 5000) {
+  else if (rumSpeedIndex > 5000) {
     return 1;
   } else if (ruleScore > 80) {
     return 4;
