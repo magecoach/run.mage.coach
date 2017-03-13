@@ -1,7 +1,7 @@
 
   <meta charset='utf-8'>
   <meta name="viewport" content="initial-scale=1">
-  <title>Analyze your Magento performance against the best practice rules.</title>
+  <title>Analyze your Magento performance against the best rules.</title>
   <meta http-equiv="refresh" content="30" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/mage.coach-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/mage.coach-114.png">

@@ -13,7 +13,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('home', {
     bodyId: 'start',
-    title: 'Analyze your Magento performance against the best practice rules.',
+    title: 'Analyze your Magento performance against the best rules.',
     description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.'
   });
 });

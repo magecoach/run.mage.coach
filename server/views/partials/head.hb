@@ -1,6 +1,7 @@
 
   <meta charset='utf-8'>
   <meta name="viewport" content="initial-scale=1">
+  <meta name="robots" content="INDEX,FOLLOW"/>
   <title>{{title}}</title>
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/mage.coach-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/mage.coach-114.png">
