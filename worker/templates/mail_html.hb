@@ -49,8 +49,8 @@
           </p>
 
           <div id="share-result">
-            <a href="{{link}}"><button id="result-see-details" class="result-button">See details</button></a>
-            <a href="{{id}}.tar.gz"><button id="result-download" class="result-button">Download</button></a>
+            <a href="{{myUrl}}{{link}}"><button id="result-see-details" class="result-button">See details</button></a>
+            <a href="{{myUrl}}{{id}}.tar.gz"><button id="result-download" class="result-button">Download</button></a>
             <ul id="share">
               <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{myUrl}}" title="Share on Twitter"><span class="count">Tw</span></a></li>
               <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{myUrl}}" title="Share on Facebook"><span class="count">Fb</span></a></li>
