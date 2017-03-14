@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/mage.coach-72.png">
   <link rel="apple-touch-icon-precomposed" href="/img/ico/mage.coach-57.png">
   <link rel="shortcut icon" href="/img/ico/mage.coach.ico">
-  <meta name="description" content="How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.">
+  <meta name="description" content="How fast is your Magento site? How well does it follow web performance best practice rules? Find out by using mage.coach.">
   <meta name="keywords" content="mage.coach, magento, webperf, perfmatters, performance">
   <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type = "text/javascript">
@@ -29,7 +29,7 @@
      else if (oldState !== 'unknown') {
 
        if (oldState === 'waiting') {
-        document.getElementById('randomtext').innerHTML = '<p>Your test has started. It will finish in a couple of minutes. Leave your browser window open and just relax.</p>';
+        document.getElementById('randomtext').innerHTML = '<p>Your test has started. It will finish in a couple of minutes. You will get an email when the test has finished, or you can leave your browser window open and just relax.</p>';
        }
 
        var display = 'Testing your page';

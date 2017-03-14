@@ -13,7 +13,7 @@
             <option value="chrome" selected>Chrome</option>
             <option value="firefox">Firefox</option>
           </select></label>
-	  <label><span>Display:</span> <select name="display">
+	  <label><span>Device type:</span> <select name="display">
             <option value="desktop" selected>Desktop</option>
             <option value="mobile">Mobile</option>
           </select></label>

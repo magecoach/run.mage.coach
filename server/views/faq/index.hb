@@ -9,9 +9,9 @@
 
     <h2>What happens when you test my site?</h2>
 
-    <p>The online version of mage.coach will test one page against web performance best practice rules and fetch timing metrics using the Navigation Timing API (one time per run). That is cool and if you want to be a performance hero, you need to test your whole site.</p>
+    <p>The online version of run.mage.coach will test a page against web performance best practice rules and fetch timing metrics using the Navigation Timing API (one time per run). That is cool and if you want to be a real performance hero, you could test your whole site.</p>
 
-    <h2>What is different connection types?</h2>
+    <h2>What are the different connection types?</h2>
     <p>We use the same setup as WebPageTest.
     <ul>
       <li>Mobile3g (1.6 Mbps/768 Kbps - 300 RTT)</li>
