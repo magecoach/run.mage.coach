@@ -72,6 +72,8 @@ app.use('/texts', express.static(path.join(__dirname, 'public', 'texts'), {
   maxAge: '10 minutes'
 }));
 
+app.use('/robots.txt', express.static(path.join(__dirname, 'public', 'robots.txt'), {maxAge: '366 days'}));
+app.use('/sitemap.xml', express.static(path.join(__dirname, 'public', 'sitemap.xml'), {maxAge: '366 days'}));
 
 app.use('/result', result);
 app.use('/api', api);
