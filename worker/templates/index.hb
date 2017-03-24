@@ -12,6 +12,19 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static.mage.coach/img/ico/mage.coach-72.png">
     <link rel="apple-touch-icon-precomposed" href="https://static.mage.coach/img/ico/mage.coach-57.png">
     <link rel="shortcut icon" href="https://static.mage.coach/img/ico/mage.coach.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@magecoach">
+    <meta name="twitter:creator" content="@raybogman">
+    <meta name="twitter:url" content="https://run.mage.coach/">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:image" content="https://static.mage.coach/img/ico/mage.coach-144.png">
+    <meta property="og:image" content="https://static.mage.coach/img/mage.coach-400x400.png">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:url" content="https://run.mage.coach/">
+    <meta property="og:site_name" content="Mage.coach - How speedy is your Magento website">
+    <meta property="og:description" content="{{description}}">
+    <meta property="fb:app_id" content="717157511826431" />
   </head>
   <body id="{{bodyId}}" class="resultpage">
   <script>
