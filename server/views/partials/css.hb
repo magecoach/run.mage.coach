@@ -110,6 +110,10 @@ footer .homelink {
     display:block;
 }
 
+#footershare .youtube a{
+    background:transparent url('https://static.mage.coach/img/socialmedia/youtube-round.svg') center center /contain no-repeat;
+}
+
 #footershare .facebook a{
     background:transparent url('https://static.mage.coach/img/socialmedia/facebook-round.svg') center center /contain no-repeat;
 }
