@@ -18,6 +18,11 @@
   <meta name="description" content="{{description}}">
   <meta name="keywords" content="magecoach, magento, webperf, perfmatters, performance">
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@magecoach">
+  <meta name="twitter:creator" content="@raybogman">
+  <meta name="twitter:url" content="https://run.mage.coach/">
+  <meta name="twitter:title" content="{{title}}">
   <meta name="twitter:description" content="{{description}}">
   <meta name="twitter:image" content="https://static.mage.coach/img/ico/mage.coach-144.png">
 
