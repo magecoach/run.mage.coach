@@ -31,6 +31,7 @@
   <meta property="og:url" content="https://run.mage.coach/">
   <meta property="og:site_name" content="Mage.coach - How speedy is your Magento website">
   <meta property="og:description" content="{{description}}">
+  <meta property="fb:app_id" content="717157511826431" />
 
   <style>
   {{> css}}
