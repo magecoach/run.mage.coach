@@ -125,8 +125,8 @@ function startJob(message, cb) {
     display: message.device,
     connection: message.c,
     maxPagesToTest: message.m || 1,
-    no: message.n || 1,
-    deep: message.d || 0,
+    numberOfRuns: message.n || 1,
+    maxDepthToTest: message.d || 0,
     outputPath: outputPath,
     dataDir: dataDir,
     id: message.id,
@@ -154,7 +154,7 @@ function startJob(message, cb) {
               display = ' --mobile';
           }
 
-          var workerCommand = '/start.sh --maxPagesToTest ' + config.maxPagesToTest + ' -d ' + config.deep + ' -b ' + config.browser + ' -n ' + config.no + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection + display + ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url;
+          var workerCommand = '/start.sh -m ' + config.maxPagesToTest + ' -d ' + config.maxDepthToTest + ' -n ' + config.numberOfRuns + ' -b ' + config.browser + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection + display + ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url; //+ ' --plugins.load /magecoach ';
 
 //	  console.log(workerCommand);
 

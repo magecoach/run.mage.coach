@@ -1,4 +1,4 @@
-FROM sitespeedio/sitespeed.io:latest
+FROM sitespeedio/sitespeed.io:4.4.2
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
 ## Should rarely change, set early in build
@@ -33,6 +33,9 @@ RUN git clone https://github.com/magecoach/run.mage.coach.git && \
 #RUN cd /worker && \
 #    npm install -g && \
 #    npm cache clean
+
+# Add plugin system
+COPY worker/lib/plugins/magecoach /magecoach
 
 #cleanup
 RUN apt-get purge -y npm git build-essential && \

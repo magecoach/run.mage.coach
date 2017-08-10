@@ -10,11 +10,38 @@ var express = require('express'),
 
 var router = express.Router();
 
+var whitelist =process.env.WHITELIST;
+var getClientIp = function(req) {
+var ipAddress = req.headers['x-forwarded-for'];
+    if (!ipAddress) {
+    return '';
+    }
+    if (ipAddress.substr(0, 7) == "::ffff:") {
+    ipAddress = ipAddress.substr(7)
+    }
+    return ipAddress;
+};
+
 router.get('/', function(req, res) {
-  res.render('home', {
+    res.render('home', {
     bodyId: 'start',
     title: 'Analyze your Magento performance against the best rules.',
-    description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.'
+    description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.',
+  });
+});
+
+router.get('/premium/', function(req, res, next) {
+    var ipAddress = getClientIp(req);
+    if(whitelist.indexOf(ipAddress) !== -1){
+        next();
+    } else {
+        res.send(ipAddress + ' IP is not in WhiteList, Email: hello@mage.coach')
+    }
+    res.render('home', {
+    bodyId: 'start',
+    title: 'PREMIUM - Analyze your Magento performance against the best rules.',
+    description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.',
+    premium: true
   });
 });
 
@@ -46,8 +73,12 @@ router.post('/', function(req, res) {
     display: req.body.display || 'desktop',
     connection: req.body.connection || 'cable',
     email: req.body.email || 'email',
-    maxPagesToTest: 1,
-    numberOfRuns: process.env.RUNS || '3',
+    maxPagesToTest: req.body.max || '1',
+    maxDepthToTest: req.body.depth || '1',
+    numberOfRuns: req.body.runs || '3',
+    //numberOfRuns: process.env.RUNS || '3',
+    //maxDepthToTest: process.env.DEEP || '1',
+    //maxPagesToTest: process.env.MAX || '1',
     date: creationDate
   };
 

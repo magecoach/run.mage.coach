@@ -29,7 +29,7 @@ var path = require('path'),
 		handleExceptions: true,
 		level: logLevel,
 		json: false,
-    exitOnError: false
+        exitOnError: false
 		});
 
 var app = express();
