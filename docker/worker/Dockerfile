@@ -35,7 +35,7 @@ RUN git clone https://github.com/magecoach/run.mage.coach.git && \
 #    npm cache clean
 
 # Add plugin system
-#COPY worker/lib/plugins/magecoach /magecoach
+COPY plugins /magecoach
 
 #cleanup
 RUN apt-get purge -y npm git build-essential && \
