@@ -87,11 +87,12 @@
         </ul>
 
         <ul id="footershare" class="socialcount footerlist">
-          <li class="youtube"><a href="https://www.youtube.com/channel/UCEmelQhyVjPdN07V286mt6g"" title="Like on Youtube"></a></li>
+          <li class="youtube"><a href="https://www.youtube.com/channel/UCEmelQhyVjPdN07V286mt6g" title="Like on Youtube"></a></li>
+          <li class="instagram"><a href="https://www.instagram.com/magecoach" title="Like on Instagram"></a></li>
           <li class="facebook"><a href="https://www.facebook.com/magecoach" title="Like on Facebook"></a></li>
           <li class="twitter"><a href="https://twitter.com/magecoach" title="Follow on Twitter"></a></li>
           <li class="coach"><a href="https://mage.coach/" title="Mage Coach"></a></li>
-	</ul>
+	      </ul>
 
       </footer>
     </div>

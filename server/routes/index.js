@@ -76,6 +76,7 @@ router.post('/', function(req, res) {
     maxPagesToTest: req.body.max || '1',
     maxDepthToTest: req.body.depth || '1',
     numberOfRuns: req.body.runs || '3',
+    gpsi: process.env.GPSI || 'zQZQH_PDXSgwsi8ASWH_zQZQHgAIzaSyAi0A',
     //numberOfRuns: process.env.RUNS || '3',
     //maxDepthToTest: process.env.DEEP || '1',
     //maxPagesToTest: process.env.MAX || '1',
@@ -102,4 +103,3 @@ router.post('/', function(req, res) {
 });
 
 module.exports = router;
-

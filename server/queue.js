@@ -56,6 +56,7 @@ module.exports = {
 				m: config.maxPagesToTest,
 				n: config.numberOfRuns,
 				d: config.maxDepthToTest,
+				g: config.gpsi,
 				date: config.date.format('YYYY-MM-DD HH:mm:ss')
 			})
 		}, function(err, resp) {
