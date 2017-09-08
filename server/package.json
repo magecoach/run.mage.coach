@@ -1,6 +1,6 @@
 {
   "name": "run.mage.coach-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "./app.js",
   "bin": "./app.js",

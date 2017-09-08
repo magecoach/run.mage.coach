@@ -20,5 +20,6 @@ COMMENT=$1
 
 git add .
 git commit -m "$COMMENT - release $PACKAGE_VERSION"
+git push
 git tag $PACKAGE_VERSION 
 git push origin --tags
