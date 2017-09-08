@@ -1,6 +1,6 @@
 {
   "name": "run.mage.coach-receiver",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Receive info from a worker and store it in the db",
   "main": "./lib/app.js",
   "bin": "./lib/app.js",
