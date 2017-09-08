@@ -1,4 +1,4 @@
-FROM sitespeedio/sitespeed.io:5.0.0
+FROM sitespeedio/sitespeed.io:5.5.0
 MAINTAINER Ray Bogman <bogman@bogman.info>
 
 ## Should rarely change, set early in build
