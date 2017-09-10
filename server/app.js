@@ -17,7 +17,7 @@ var path = require('path'),
   log = require('winston'),
   cookieParser = require('cookie-parser'),
   sponsors = require('./routes/sponsors'),
-  result = require('./routes/result');
+  result = require('./routes/result'),
   premium = require('./routes/premium');
 
 	var logLevel = process.env.LOG_LEVEL || 'info';
