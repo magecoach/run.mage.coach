@@ -10,11 +10,30 @@ var express = require('express'),
 
 var router = express.Router();
 
-router.get('/', function(req, res) {
-    res.render('home', {
+var whitelist =process.env.WHITELIST;
+var getClientIp = function(req) {
+var ipAddress = req.headers['x-forwarded-for'];
+    if (!ipAddress) {
+    return '';
+    }
+    if (ipAddress.substr(0, 7) == "::ffff:") {
+    ipAddress = ipAddress.substr(7)
+    }
+    return ipAddress;
+};
+
+router.get('/', function(req, res, next) {
+    var ipAddress = getClientIp(req);
+    if(whitelist.indexOf(ipAddress) !== -1){
+        next();
+    } else {
+        res.send(ipAddress + ' IP is not in WhiteList, Email: hello@mage.coach')
+    }
+    res.render('premium/index', {
     bodyId: 'start',
-    title: 'Analyze your Magento performance against the best rules.',
+    title: 'PREMIUM - Analyze your Magento performance against the best rules.',
     description: 'How fast is your Magento site? How good does it follow web performance best practice rules? Find out by using Mage.coach.',
+    premium: true
   });
 });
 

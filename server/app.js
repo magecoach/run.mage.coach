@@ -18,6 +18,7 @@ var path = require('path'),
   cookieParser = require('cookie-parser'),
   sponsors = require('./routes/sponsors'),
   result = require('./routes/result');
+  premium = require('./routes/premium');
 
 	var logLevel = process.env.LOG_LEVEL || 'info';
 	var logFile = process.env.LOG_FILE || 'server.log';
@@ -79,6 +80,7 @@ app.use('/result', result);
 app.use('/api', api);
 app.use('/sponsors', sponsors);
 app.use('/report', report);
+app.use('/premium', premium);
 app.use('/about', about);
 app.use('/faq', faq);
 app.use('/', index);
