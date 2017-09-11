@@ -180,7 +180,7 @@ body#start {
     display: block;
 }
 
-#analyze-form select, #analyze-url, #email{
+#analyze-form select, textarea, #analyze-url, #email{
     color: #000;
     padding: 0.5em;
     margin-bottom: 1em;
@@ -499,7 +499,7 @@ padding-bottom: 10px;
       font-size: 24px;
     }
 
-    #analyze-form select, #email {
+    #analyze-form select, textarea, #email {
         width: 60%;
         float: right;
     }

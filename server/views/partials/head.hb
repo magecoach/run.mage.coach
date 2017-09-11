@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon-precomposed" href="https://static.mage.coach/img/ico/mage.coach-57.png">
   <link rel="shortcut icon" href="https://static.mage.coach/img/ico/mage.coach.ico">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  
   <meta name="description" content="{{description}}">
   <meta name="keywords" content="magecoach, magento, webperf, perfmatters, performance">
 

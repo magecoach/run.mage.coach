@@ -68,6 +68,31 @@
               <option value="100">100</option>
             </select>
           </label>
+          <label><span>Multi URL's:</span><textarea rows="10" cols="15"></textarea></label>
+          
+<script type="text/javascript">
+$(function(){
+
+    $('textarea').on('keypress',function(event){
+          var text = $('textarea').val();
+          var lines = text.split("\n");
+          var currentLine = this.value.substr(0, this.selectionStart).split("\n").length;
+          console.log(lines);
+          console.log(currentLine);
+          console.log(lines[currentLine-1]);
+          if(event.keyCode == 13) {
+            if (lines.length >= $(this).attr('rows'))
+                return false;
+          }
+          else{
+             if(lines[currentLine-1].length >= $(this).attr('cols')) {
+                 return false; // prevent characters from appearing
+         }
+    }
+});
+});
+</script>
+          
           {{else}}
           <label><span>Amount of Runs:</span>
             <select name="runs">
