@@ -1,6 +1,6 @@
 {
   "name": "run.mage.coach-worker",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "",
   "main": "./lib/app.js",
   "bin": "./lib/app.js",

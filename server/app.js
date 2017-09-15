@@ -11,6 +11,7 @@ var path = require('path'),
   expressMinify = require('express-beautify'),
   api = require('./routes/api'),
   index = require('./routes/index'),
+  premium = require('./routes/premium'),
   about = require('./routes/about'),
   report = require('./routes/report'),
   faq = require('./routes/faq'),
@@ -81,6 +82,7 @@ app.use('/sponsors', sponsors);
 app.use('/report', report);
 app.use('/about', about);
 app.use('/faq', faq);
+app.use('/premium', premium);
 app.use('/', index);
 
 app.use(function(req, res) {
