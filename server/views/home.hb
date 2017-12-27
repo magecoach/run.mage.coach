@@ -68,7 +68,7 @@
               <option value="100">100</option>
             </select>
           </label>
-          <label><span>Multi URL's:</span><textarea rows="10" cols="15"></textarea></label>
+          <label><span>Multi URL's:</span><textarea name="multiurl" rows="10" cols="100"></textarea></label>
           
 <script type="text/javascript">
 $(function(){

@@ -29,7 +29,7 @@ var cache = new NodeCache({
 });
 
 module.exports = {
-  storeRun: function(url, id, ip, creationDate, browser, display, email, location, cb) {
+  storeRun: function(url, id, ip, creationDate, browser, display, email, multiurl, location, cb) {
 
     pool.getConnection(function(err, connection) {
 
@@ -46,6 +46,7 @@ module.exports = {
           browser: browser,
           display: display,
           email: email,
+          multiurl: multiurl,
           created: creationDate.format('gggg-MM-DD HH:mm:ss'),
           testerIp: ip,
           status: 'waiting'

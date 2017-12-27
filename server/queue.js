@@ -52,6 +52,7 @@ module.exports = {
 				b: config.browser,
 				device: config.display,
 				e: config.email,
+				multiurl: config.multiurl,
 				c: config.connection,
 				m: config.maxPagesToTest,
 				n: config.numberOfRuns,

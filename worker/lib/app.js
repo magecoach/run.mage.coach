@@ -123,6 +123,7 @@ function startJob(message, cb) {
     url: message.u,
     browser: message.b,
     display: message.device,
+    multiurl: message.multiurl,
     connection: message.c,
     maxPagesToTest: message.m || 1,
     numberOfRuns: message.n || 1,

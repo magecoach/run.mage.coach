@@ -8,7 +8,8 @@ module.exports = {
     var ids = {
       6: 'hero',
       5: 'great-result',
-      4: 'good-result'
+      4: 'good-result',
+      3: 'solid-result'
     };
     var n = calculateAggregatedScore(score, rumSpeedIndex);
 

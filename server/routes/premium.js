@@ -74,9 +74,7 @@ router.post('/', function(req, res) {
     maxDepthToTest: req.body.depth || '1',
     numberOfRuns: req.body.runs || '3',
     gpsi: process.env.GPSI || 'zQZQH_PDXSgwsi8ASWH_zQZQHgAIzaSyAi0A',
-    //numberOfRuns: process.env.RUNS || '3',
-    //maxDepthToTest: process.env.DEEP || '1',
-    //maxPagesToTest: process.env.MAX || '1',
+    multiurl: req.body.multiurl,
     date: creationDate
   };
 
@@ -90,7 +88,7 @@ router.post('/', function(req, res) {
     if (err) {
       res.redirect('/');
     } else {
-      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, config.display, config.email, queueName, function() {
+      db.storeRun(config.url, sessionId, ip, creationDate, config.browser, config.display, config.email, config.multiurl, queueName, function() {
         res.cookie('ssioqueue', queueNumber);
         // res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
         res.redirect('/result/' + sessionId);
