@@ -156,7 +156,7 @@ function startJob(message, cb) {
               display = ' --mobile';
           }
 
-          var workerCommand = '/start.sh -m ' + config.maxPagesToTest + ' -d ' + config.maxDepthToTest + ' -n ' + config.numberOfRuns + ' --gpsi.key ' + config.gpsi + ' --html.showAllWaterfallSummary --video --speedIndex -b ' + config.browser + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection + display + ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url; //+ ' --plugins.load /magecoach ';
+          var workerCommand = '/start.sh -m ' + config.maxPagesToTest + ' -d ' + config.maxDepthToTest + ' -n ' + config.numberOfRuns + ' --html.showAllWaterfallSummary --video --speedIndex -b ' + config.browser + ' --outputFolder ' + config.dataDir+'sitespeed-result/'+config.outputPath + ' -c ' + config.connection + display + ' --seleniumServer http://127.0.0.1:4444/wd/hub ' + config.url; //+ ' --plugins.load /magecoach ';
 
 //	  console.log(workerCommand);
 
